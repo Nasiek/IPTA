@@ -1,0 +1,416 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//Start Links
+p a:link
+{
+  color: #413175;
+  text-decoration: none;
+}
+p a:visited {
+    color: #413175;
+}
+p a:hover
+{
+  color: #FBFBFB;
+}
+#login_p a:link
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#login_p a:visited
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#login_p a:hover
+{
+  color: #FBFBFB;
+}
+//End Links
+
+//Start DIvs
+#footer_div
+{
+  background-color: #15093A;
+  height: 100px;
+	width: 1325px;
+  top: 1800px;
+  left: 8px;
+	position: absolute;
+}
+#footer1_div
+{
+  background-color: #413175;
+  height: 50px;
+	width: 5px;
+  top: 25px;
+  left: 295px;
+	position: absolute;
+}
+#header_div
+{
+  background-color: #15093A;
+  height: 100px;
+	width: 1325px;
+  top: 0px;
+  left: 8px;
+	position: absolute;
+}
+#main_div
+{
+  height: 250px;
+	width: 425px;
+  top: 200px;
+  left: 450px;
+	position: absolute;
+}
+#misc_div
+{
+  background-color: silver;
+  height: 225px;
+	width: 1325px;
+  top: 1575px;
+  left: 8px;
+	position: absolute;
+}
+#misc1_div
+{
+  border-style: dashed;
+  color: coral;
+  height: 175px;
+	width: 0px;
+  top: 25px;
+  left: 441.666667px;
+	position: absolute;
+}
+#misc2_div
+{
+  border-style: dashed;
+  color: coral;
+  height: 175px;
+	width: 0px;
+  top: 25px;
+  left: 883.333333px;
+	position: absolute;
+}
+#offer_div
+{
+  background-color: #15093A;
+  height: 375px;
+	width: 1325px;
+  top: 1200px;
+  left: 8px;
+	position: absolute;
+}
+#offer1_div
+{
+  background-color: #413175;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 25px;
+	position: absolute;
+}
+#offer2_div
+{
+  background-color: #413175;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 370px;
+	position: absolute;
+}
+#offer3_div
+{
+  background-color: #413175;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 730px;
+	position: absolute;
+}
+#offer4_div
+{
+  background-color: #413175;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 1060px;
+	position: absolute;
+}
+#provide_div
+{
+  background-color: wheat;
+  height: 600px;
+	width: 1325px;
+  top: 600px;
+  left: 8px;
+	position: absolute;
+  text-align: center;
+}
+
+//End Divs
+
+//Start H's
+#follow_h3
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 35px;
+  top: -7.5px;
+  left: 25px;
+  position: absolute;
+}
+#ISTA_h2
+{
+  font-size: 50px;
+  top: 0px;
+  left: 950px;
+  position: absolute;
+}
+#main_h2
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #8E8A9A;
+  text-shadow: 0px 0px 25px silver;
+  text-align: center;
+  font-size: 40px;
+}
+#name_h1
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #413175;
+  font-size: 75px;
+  top: -50px;
+  left: 50px;
+  position:absolute;
+}
+#offer_h2
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 40px;
+  top: 0px;
+  left: 50px;
+  position: absolute;
+}
+#offer1_h3
+{
+  color: silver;
+  top: 225px;
+  left: 25px;
+  position: absolute;
+}
+#offer2_h3
+{
+  color: silver;
+  top: 225px;
+  left: 370px;
+  position: absolute;
+}
+#offer3_h3
+{
+  color: silver;
+  top: 225px;
+  left: 730px;
+  position: absolute;
+}
+#offer4_h3
+{
+  color: silver;
+  top: 225px;
+  left: 1060px;
+  position: absolute;
+}
+//End H's
+
+//Start P's
+#careers_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  top: 20px;
+  left: 930px;
+  position:absolute;
+}
+#cityState_p
+{
+  font-size: 20px;
+  top: 135px;
+  left: 950px;
+  position:absolute;
+}
+#corp_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  top: 20px;
+  left: 1100px;
+  position:absolute;
+}
+#destination_p
+{
+  font-size: 25px;
+  top: 15px;
+  left: 138.893334px;
+  position:absolute;
+}
+#gallery_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  top: 20px;
+  left: 1200px;
+  position:absolute;
+}
+#gram_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  top: 20px;
+  left: 350px;
+  position:absolute;
+}
+#home_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  top: 20px;
+  left: 830px;
+  position:absolute;
+}
+#login_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #8E8A9A;
+  font-size: 20px;
+  text-shadow: 0px 0px 15px silver;
+  top: 175px;
+  left: 43.205px;
+  position:absolute;
+}
+#offer1_p
+{
+  top: 300px;
+  left: 25px;
+  position:absolute;
+}
+#offer2_p
+{
+  top: 300px;
+  left: 370px;
+  position:absolute;
+}
+#offer3_p
+{
+  top: 300px;
+  left: 730px;
+  position:absolute;
+}
+#offer4_p
+{
+  top: 300px;
+  left: 1060px;
+  position:absolute;
+}
+#pEarn_p
+{
+  color: white;
+  font-size: 25px;
+  top: 80px;
+  left: 535.07px;
+  position:absolute;
+}
+#pJobs_p
+{
+  color: white;
+  font-size: 25px;
+  top: 145px;
+  left: 535.07px;
+  position:absolute;
+}
+#pReqs_p
+{
+  color: white;
+  font-size: 25px;
+  top: 15px;
+  left: 535.07px;
+  position:absolute;
+}
+#provide_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #FBFBFB;
+  font-size: 65px;
+  top: 25px;
+  position:absolute;
+}
+#service_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  top: 20px;
+  left: 1060px;
+  position:absolute;
+}
+#street_p
+{
+  font-size: 20px;
+  top: 95px;
+  left: 950px;
+  position:absolute;
+}
+#tube_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  top: 20px;
+  left: 655px;
+  position:absolute;
+}
+#twitter_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  top: 20px;
+  left: 520px;
+  position:absolute;
+}
+//End P's
+
+//Start Buttons
+#signup_button
+{
+  background-color: #8E8A9A;
+  color: silver;
+  border-radius: 30px;
+  box-shadow: 0px 5px 20px;
+  top: 150px;
+  left: 148.195px;
+  position:absolute;
+}
+//End Buttons
+
+//Start Images
+#a_pic
+{
+  top: 15px;
+  left: 160px;
+  position: absolute;
+}
+#provide_pic
+{
+
+}
+//End Images
+#vid
+{
+  position: absolute;
+  top: -125px;
+}
