@@ -1,0 +1,2 @@
+class ShipTripJoin < ApplicationRecord
+end

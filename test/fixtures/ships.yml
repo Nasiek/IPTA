@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  veh_name: MyString
+  veh_location: MyString
+  seats: 1
+  user: one
+
+two:
+  veh_name: MyString
+  veh_location: MyString
+  seats: 1
+  user: two
