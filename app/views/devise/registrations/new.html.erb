@@ -1,29 +1,57 @@
-<h2>Sign up</h2>
+<!--sign up page-->
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!--start header-->
+  <div id="header_div">
+    <nav>
+      <h1 id="name_h1">IST</h1>
+      <img id="a_pic" src="/assets/letterA.png" style ="width:70px;">
+      <p id="home_p"><a href ="/">HOME</a></p>
+      <p id="careers_p"><a href ="/careers">CAREERS</a></p>
+      <p id="service_p"><a href ="/services">SERVICES</a></p>
+      <p id="gallery_p"><a href ="/gallery">GALLERY</a></p>
+    </nav>
   </div>
+<!--end header-->
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+<!--start main-->
+<div id="main_div2">
+  <img id="main_pic" src="/assets/in_upPic.gif" style ="width:1325px; height:600px;">
+  <div id="form_div">
+    <h2 id="signup_h2">Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div id="email_div">
+      <%= f.label "Email:" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    <div id="password_div">
+      <%= f.label "Password:" %>
+      <% if @minimum_password_length %>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <div id="confirm_div">
+      Confirm:<br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+    <div id="signup_button2">
+      <%= f.submit "Sign up" %>
+    </div>
+    <% end %>
+    <p id="login_p2">Already a member <%= render "devise/shared/links" %></p>
   </div>
+</div>
+<!--end main-->
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<!--Start footer-->
+<div id="footer_div2">
+  <h3 id="follow_h3">Follow ISTA</h3>
+  <div id="footer1_div"></div>
+  <p id="twitter_p"><a href ="https://twitter.com/NASA">Twitter</a></p>
+  <p id="tube_p"><a href ="https://www.youtube.com/user/NASAtelevision/about">Youtube</a></p>
+  <p id="gram_p"><a href ="https://www.instagram.com/nasa/?hl=en">Instagram</a></p>
+  <p id="corp_p">©2018 ISTA Corp.</p>
+</div>
+<!--End footer-->
