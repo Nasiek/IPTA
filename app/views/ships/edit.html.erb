@@ -1,2 +1,28 @@
 <h1>Ships#edit</h1>
 <p>Find me in app/views/ships/edit.html.erb</p>
+
+
+//form to edit a ship from "ship profile" page
+
+<form class="" action="/ships_edit/<%=@ship.id%>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+
+    <input type="text" name="[update]veh_name" value="<%= @ship.veh_name %>">
+
+    <select name="[update]veh_location">
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+    </select>
+
+    <select name="[update]seats">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+    </select>
+
+    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+    <input type="submit" name="" value="submit">
+</form>

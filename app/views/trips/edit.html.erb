@@ -1,2 +1,44 @@
 <h1>Trips#edit</h1>
 <p>Find me in app/views/trips/edit.html.erb</p>
+
+
+//form to edit a trip
+
+<form class="" action="/trips_edit/<%=@user.id%>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+
+    <select name="[update]description">
+        <option value="passenger">passenger</option>
+        <option value="freight">freight</option>
+    </select>
+
+    <select name="[update]origin">
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+    </select>
+
+    <select name="[update]destination">
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+        <option value="Europa">Europa</option>
+    </select>
+
+// put in distance output
+
+
+    <select name="[update]seats">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+    </select>
+
+// put in cost output
+
+    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+    <input type="submit" name="" value="submit">
+</form>

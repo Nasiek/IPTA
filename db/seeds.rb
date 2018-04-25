@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_list = [
-  [ "Clark", "Kent", "superman@email.com", "123" ],
-  [ "Harry", "Potter", "harry@email.com", "123" ],
-  [ "Hermoine", "Granger", "hermoine@email.com", "123" ],
-  [ "Busta", "Rhymes", "busta@email.com", "123" ],
-  [ "Ghengis", "Khan", "ghengis@email.com", "123" ],
-  [ "Serena", "Williams", "serena@email.com", "123" ],
-  [ "R2", "D2", "r2d2@email.com", "123" ],
-  [ "Tooth", "Fairy", "tooth@email.com", "123" ],
-  [ "Barack", "Obama", "barack@email.com", "123" ],
-  [ "Scooby", "Doo", "scooby@email.com", "123" ],
-  [ "Mr.", "Spock", "spock@email.com", "123" ]
+  [ "Clark", "Kent", "superman@email.com", "password" ],
+  [ "Harry", "Potter", "harry@email.com", "password" ],
+  [ "Hermoine", "Granger", "hermoine@email.com", "password" ],
+  [ "Busta", "Rhymes", "busta@email.com", "password" ],
+  [ "Ghengis", "Khan", "ghengis@email.com", "password" ],
+  [ "Serena", "Williams", "serena@email.com", "password" ],
+  [ "R2", "D2", "r2d2@email.com", "password" ],
+  [ "Tooth", "Fairy", "tooth@email.com", "password" ],
+  [ "Barack", "Obama", "barack@email.com", "password" ],
+  [ "Scooby", "Doo", "scooby@email.com", "password" ],
+  [ "Mr.", "Spock", "spock@email.com", "password" ]
 ]
 
 user_list.each do |fname, lname, email, encrypted_password|
@@ -49,21 +49,21 @@ end
 
 
 ship_list = [
-  [ "Earth", 10, 0],
-  [ "Mars", 10, 1],
-  [ "Moon", 6, 2],
-  [ "Mars", 6, 3],
-  [ "Ceres", 6, 4],
-  [ "Earth", 12, 5],
-  [ "Earth", 10, 6],
-  [ "Earth", 6, 7],
-  [ "Venus", 6, 8],
-  [ "Moon", 12, 9],
-  [ "Moon", 6, 10],
-  [ "Venus", 10, 0],
-  [ "Mars", 6, 1],
-  [ "Venus", 6, 2],
-  [ "Ceres", 6, 3],
+  [ "Superflyer", "Earth", 10, 0],
+  [ "Thunderbolt", "Mars", 10, 1],
+  [ "Moonmagic", "Moon", 6, 2],
+  [ "Sunburst", "Mars", 6, 3],
+  [ "Starscream", "Ceres", 6, 4],
+  [ "Jetfire", "Earth", 12, 5],
+  [ "Millenium Falcon", "Earth", 10, 6],
+  [ "Nostromo", "Earth", 6, 7],
+  [ "Nebuchadnezzar", "Venus", 6, 8],
+  [ "Mysterymachine", "Moon", 12, 9],
+  [ "Enterprise", "Moon", 6, 10],
+  [ "Nautilus", "Venus", 10, 0],
+  [ "Jolly Roger", "Mars", 6, 1],
+  [ "Astrotrain", "Venus", 6, 2],
+  [ "Botany Bay", "Ceres", 6, 3],
 ]
 
 ship_list.each do | vehicle_name, vehicle_location, vehicle_seats, user_id |

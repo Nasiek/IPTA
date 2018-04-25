@@ -6,6 +6,10 @@ class ShipsController < ApplicationController
 
   end
 
-def edit
-end
+  def edit
+      @user = User.find(params[:id])
+
+  end
+
+
 end

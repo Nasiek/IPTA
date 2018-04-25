@@ -1,2 +1,48 @@
 <h1>Ships#feed</h1>
 <p>Find me in app/views/ships/feed.html.erb</p>
+
+<% if @current_user %>
+    <h2><%= @current_user.fname %>'s Ships Feed</h2>
+
+    <h2><% @current_user.ship.each do |ship|%></h2>
+
+<!-- this shows all your ships -->
+      <div id="allships">
+          <h4><%= ship.veh_name%></h4>
+          <p><%= ship.veh_location%></p>
+          <p>It has <%= ship.seats%> seats</p>
+
+          <form class="" action="/*********/<%= ship.id%>" method="post">
+                 <input type="submit" name="<%= ship.id%>" value="Delete sihps">
+          </form>
+          <button onclick="location.href='/******/<%= ship.id %>'" id="edit">Edit Ship</button>
+
+      </div>
+
+    <% end %>
+<% end %>
+
+//form to create a ship for "ship feed" page
+
+<form class="" action="/ships_edit/<%=@ship.id%>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+
+    <input type="text" name="[create]veh_name" value="<%= @ship.veh_name %>">
+
+    <select name="[create]veh_location">
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+    </select>
+
+    <select name="[create]seats">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+    </select>
+
+    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+    <input type="submit" name="" value="submit">
+</form>
