@@ -9,12 +9,14 @@
 
 	<p></p>
 
+
+// current person logged in
 	<% if @current_user %>
 	    <h2><%= @current_user.fname %>'s Ships Feed</h2>
 
 	    <% @current_user.ships.each do |ship|%>
 
-	<!-- this shows all your ships -->
+//this is all of users ships
 	      <div id="allships">
 	          <h4>Ship Name: <%= ship.veh_name%></h4>
 	          <p><%= ship.veh_location%></p>

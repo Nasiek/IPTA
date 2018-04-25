@@ -1,12 +1,13 @@
 <h1>Trips#feed</h1>
 <p>Find me in app/views/trips/feed.html.erb</p>
 
+//current person logged in
 <% if @current_user %>
     <h2><%= @current_user.fname %>'s Trips Feed</h2>
 
     <h2><% @current_user.trip.each do |trip|%></h2>
 
-<!-- this shows all your trips -->
+//all of the users trips
       <div id="alltrips">
           <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
             <p>It is starting at <%= trip.origin%></p>
@@ -53,7 +54,7 @@
         <option value="Europa">Europa</option>
     </select>
 
-// put in distance outout???
+// put in distance output???
     <p>Total distance: <%= trip.distance%> million miles.</p>
 
 
@@ -66,7 +67,7 @@
 // put in cost output???
     <p>Total cost: <%= trip.cost%></p>
 
-
+//submit that attaches to user id
     <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
     <input type="submit" name="" value="submit">
 </form>
