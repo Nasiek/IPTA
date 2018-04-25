@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'ships/edit'
   get 'trips/edit'
   get 'welcome/index'
-  
+  get 'users/home', to: 'users#user_home'
 
   get 'ships/feed', to: 'ships#index'
   get 'ships/personal', to: 'ships#show'
