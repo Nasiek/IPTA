@@ -1,2 +1,31 @@
 <h1>Trips#feed</h1>
 <p>Find me in app/views/trips/feed.html.erb</p>
+
+t.string :description
+t.string :origin
+t.string :destination
+t.integer :distance
+t.integer :seats
+t.integer :cost
+
+<% if @current_user %>
+    <h2><%= @current_user.fname %>'s Trips Feed</h2>
+
+    <h2><% @current_user.trip.each do |trip|%></h2>
+
+<!-- this shows all your ships -->
+      <div id="allships">
+          <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
+          <p>It is starting at <%= trip.origin%></p>
+          <p>And going to <%= trip.destination%></p>
+
+
+          <form class="" action="/*********/<%= ship.id%>" method="post">
+                 <input type="submit" name="<%= ship.id%>" value="Delete sihps">
+          </form>
+          <button onclick="location.href='/******/<%= ship.id %>'" id="edit">Edit Ship</button>
+
+      </div>
+
+    <% end %>
+<% end %>
