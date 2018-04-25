@@ -1,31 +1,72 @@
 <h1>Trips#feed</h1>
 <p>Find me in app/views/trips/feed.html.erb</p>
 
-t.string :description
-t.string :origin
-t.string :destination
-t.integer :distance
-t.integer :seats
-t.integer :cost
-
 <% if @current_user %>
     <h2><%= @current_user.fname %>'s Trips Feed</h2>
 
     <h2><% @current_user.trip.each do |trip|%></h2>
 
-<!-- this shows all your ships -->
-      <div id="allships">
+<!-- this shows all your trips -->
+      <div id="alltrips">
           <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
-          <p>It is starting at <%= trip.origin%></p>
-          <p>And going to <%= trip.destination%></p>
+            <p>It is starting at <%= trip.origin%></p>
+            <p>And going to <%= trip.destination%></p>
+            <p>Total distance: <%= trip.distance%> million miles.</p>
+            <p><%= trip.seats%> seats</p>
+            <p>Total cost: <%= trip.cost%></p>
 
-
-          <form class="" action="/*********/<%= ship.id%>" method="post">
-                 <input type="submit" name="<%= ship.id%>" value="Delete sihps">
+          <form class="" action="/*********/<%= trip.id%>" method="post">
+                 <input type="submit" name="<%= trip.id%>" value="Delete trips">
           </form>
-          <button onclick="location.href='/******/<%= ship.id %>'" id="edit">Edit Ship</button>
+
+          <button onclick="location.href='/******/<%= trip.id %>'" id="edit">Edit Trip</button>
 
       </div>
 
     <% end %>
 <% end %>
+
+
+//form to create a trip for "trip feed" page
+
+<form class="" action="/trips_edit/<%=@user.id%>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+
+    <select name="[create]description">
+        <option value="passenger">passenger</option>
+        <option value="freight">freight</option>
+    </select>
+
+    <select name="[create]origin">
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+    </select>
+
+    <select name="[create]destination">
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+        <option value="Europa">Europa</option>
+    </select>
+
+// put in distance outout???
+    <p>Total distance: <%= trip.distance%> million miles.</p>
+
+
+    <select name="[create]seats">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+    </select>
+
+// put in cost output???
+    <p>Total cost: <%= trip.cost%></p>
+
+
+    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+    <input type="submit" name="" value="submit">
+</form>
