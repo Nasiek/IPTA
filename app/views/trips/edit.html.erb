@@ -7,11 +7,13 @@
 <form class="" action="/trips_edit/<%=@user.id%>" method="post">
     <input type="hidden" name="_method" value="PUT">
 
+//update description
     <select name="[update]description">
         <option value="passenger">passenger</option>
         <option value="freight">freight</option>
     </select>
 
+//drop down for origin and destination
     <select name="[update]origin">
         <option value="Venus">Venus</option>
         <option value="Earth">Earth</option>
@@ -41,7 +43,7 @@
 // put in cost output???
     <p>Total cost: <%= trip.cost%></p>
 
-
+//submit that attaches to user id
     <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
     <input type="submit" name="" value="submit">
 </form>

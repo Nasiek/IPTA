@@ -6,12 +6,22 @@ planet_distances = { "Venus" => 0,
                      "Mars" => 75.25,
                      "Ceres" => 190.25,
                      "Europa" => 415.25
-}
+                    }
 
-Trip.distance = (Trip.destination - Trip.origin)
+def calculate_distance
+    @distance = Trip.distance
+    @distance = (Trip.destination - Trip.origin)
+    @distance.save
 
-Trip.cost = (Trip.distance) * (Trip.seats) * (1000)
 
+end
+
+
+
+def calculate_cost
+    @cost = Trip.cost
+    @cost = (Trip.distance) * (Trip.seats) * (1000)
+    @cost.save
 
 
 end
