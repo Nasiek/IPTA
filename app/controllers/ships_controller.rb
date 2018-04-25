@@ -8,7 +8,7 @@ class ShipsController < ApplicationController
 
   def edit
       @user = User.find(params[:id])
-
+      @ship = current_user.ships.find(params[:ship_id])
   end
 
 
