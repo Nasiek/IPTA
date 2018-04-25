@@ -10,8 +10,16 @@ class TripsController < ApplicationController
 
   def edit
       @user = User.find(params[:id])
-
   end
+
+
+  def create
+  end
+
+  def delete
+  end
+
+
 
 
 end

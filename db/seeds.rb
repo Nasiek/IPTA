@@ -66,6 +66,6 @@ ship_list = [
   [ "Botany Bay", "Ceres", 6, 3],
 ]
 
-ship_list.each do | vehicle_name, vehicle_location, vehicle_seats, user_id |
-      Ship.create( vehicle_name: vehicle_name, vehicle_location: vehicle_location, vehicle_seats: vehicle_seats, user_id: user_id)
+ship_list.each do | veh_name, veh_location, seats, user_id |
+      Ship.create( veh_name: veh_name, veh_location: veh_location, seats: seats, user_id: user_id)
 end

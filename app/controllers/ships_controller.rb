@@ -12,5 +12,12 @@ class ShipsController < ApplicationController
       @ship = current_user.ships.find(params[:ship_id])
   end
 
+  def create
+  end
+
+  def delete
+  end
+
+
 
 end
