@@ -1,3 +1,42 @@
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,11 +52,658 @@
  *= require_tree .
  *= require_self
  */
-.logout {
+/*.logout {
 	left: 0px;
 	top: 0px;
 	position: relative;
 	z-index:20;
 	color: yellow;
 	font-size: 50px;
+}*/
+/*Start Links*/
+#footer_div a:link
+{
+  color: #887bb3;
+  text-decoration: none;
 }
+#footer_div a:visited
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#footer_div a:hover
+{
+  color: #FBFBFB;
+}
+#header_div a:link
+{
+  color: #413175;
+  text-decoration: none;
+}
+#header_div a:visited
+{
+  color: #413175;
+}
+#header_div a:hover
+{
+  color: #FBFBFB;
+}
+#links_div a:link
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#links_div a:visited
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#links_div a:hover
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#main_div a:link
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#main_div a:visited
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#main_div a:hover
+{
+  color: #FBFBFB;
+}
+#misc_div a:link
+{
+  color: #FBFBFB;
+  text-decoration: none;
+}
+#misc_div a:visited
+{
+  color: #FBFBFB;
+  text-decoration: none;
+}
+#misc_div a:hover
+{
+  color: #020008;
+}
+/*End Links*/
+
+/*Start Divs*/
+#confirm_div
+{
+  top: 140px;
+  left: 13.5px;
+	position: absolute;
+  color: #413175;
+  text-shadow: 0px 0px 10px #8E8A9A;
+}
+#email_div
+{
+  top: 60px;
+  left: 13.5px;
+	position: absolute;
+  color: #413175;
+  text-shadow: 0px 0px 10px #8E8A9A;
+}
+#footer_div
+{
+  background-color: #15093A;
+  height: 100px;
+	width: 1325px;
+  top: 1800px;
+  left: 8px;
+	position: absolute;
+}
+#footer_div2
+{
+  background-color: #15093A;
+  height: 100px;
+	width: 1325px;
+  top: 700px;
+  left: 8px;
+	position: absolute;
+}
+#form_div
+{
+  background-color: #FBFBFB;
+  border-radius: 75px;
+  height: 300px;
+	width: 200px;
+  top: 75px;
+  left: 570px;
+	position: absolute;
+}
+#header_div
+{
+  background-color: #15093A;
+  height: 100px;
+	width: 1325px;
+  top: 0px;
+  left: 8px;
+	position: absolute;
+}
+#links_div
+{
+  top: 225px;
+  left: 26.375px;
+	position: absolute;
+  text-align: center;
+  color: #413175;
+  text-shadow: 0px 0px 10px #8E8A9A;
+}
+#main_div
+{
+  height: 250px;
+	width: 425px;
+  top: 200px;
+  left: 450px;
+	position: absolute;
+}
+#main_div2
+{
+  height: 600px;
+	width: 1325px;
+  top: 100px;
+  left: 8px;
+	position: absolute;
+}
+#misc_div
+{
+  background-color: #887BB3;
+  height: 225px;
+	width: 1325px;
+  top: 1575px;
+  left: 8px;
+	position: absolute;
+}
+#offer_div
+{
+  background-color: #887bb3;
+  height: 375px;
+	width: 1325px;
+  top: 1200px;
+  left: 8px;
+	position: absolute;
+}
+#password_div
+{
+  top: 100px;
+  left: 13.5px;
+	position: absolute;
+  color: #413175;
+  text-shadow: 0px 0px 10px #8E8A9A;
+}
+#provide_div
+{
+  height: 600px;
+	width: 1325px;
+  top: 600px;
+  left: 8px;
+	position: absolute;
+  text-align: center;
+}
+#remember_div
+{
+  color: #413175;
+  text-shadow: 0px 0px 10px #8E8A9A;
+  top: 140px;
+  left: 13.5px;
+	position: absolute;
+  text-align: center;
+}
+/*End Divs*/
+
+/*Start headers*/
+#follow_h3
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 35px;
+  top: -7.5px;
+  left: 25px;
+  position: absolute;
+}
+#ISTA_h2
+{
+  color: #FBFBFB;
+  font-size: 50px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 0px;
+  left: 950px;
+  position: absolute;
+}
+#main_h2
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #8E8A9A;
+  text-shadow: 0px 0px 25px #020008;
+  text-align: center;
+  font-size: 40px;
+}
+#name_h1
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #413175;
+  font-size: 75px;
+  text-shadow: 0px 0px 25px #020008;
+  top: -50px;
+  left: 50px;
+  position:absolute;
+}
+#offer_h2
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #FBFBFB;
+  font-size: 40px;
+  text-shadow: 0px 0px 20px #020008;
+  top: 0px;
+  left: 50px;
+  position: absolute;
+}
+#offer1_h3
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 225px;
+  left: 25px;
+  position: absolute;
+}
+#offer2_h3
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 225px;
+  left: 370px;
+  position: absolute;
+}
+#offer3_h3
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 225px;
+  left: 730px;
+  position: absolute;
+}
+#offer4_h3
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 225px;
+  left: 1060px;
+  position: absolute;
+}
+#signin_h2
+{
+  color: #15093A;
+  text-shadow: 0px 0px 20px #887bb3;
+  top: 0px;
+  left: 60.97px;
+  position: absolute;
+}
+#signup_h2
+{
+  color: #15093A;
+  text-shadow: 0px 0px 20px #887bb3;
+  top: 0px;
+  left: 60.97px;
+  position: absolute;
+}
+/*End headers*/
+
+/*Start P's*/
+#careers_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 930px;
+  position:absolute;
+}
+#cityState_p
+{
+  color: #FBFBFB;
+  font-size: 20px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 135px;
+  left: 950px;
+  position:absolute;
+}
+#corp_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 1100px;
+  position:absolute;
+}
+#destination_p
+{
+  color: #FBFBFB;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 15px;
+  left: 138.893334px;
+  position:absolute;
+}
+#gallery_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 1200px;
+  position:absolute;
+}
+#gram_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 350px;
+  position:absolute;
+}
+#home_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 830px;
+  position:absolute;
+}
+#login_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #8E8A9A;
+  font-size: 20px;
+  text-shadow: 0px 0px 20px #020008;
+  top: 175px;
+  left: 43.205px;
+  position:absolute;
+}
+#login_p2
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #15093A;
+  font-size: 12px;
+  text-shadow: 0px 0px 20px #887BB3;
+  top: 225px;
+  left: 17.155px;
+  position:absolute;
+}
+#pEarn_p
+{
+  color: #FBFBFB;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 80px;
+  left: 535.07px;
+  position:absolute;
+}
+#pJobs_p
+{
+  color: #FBFBFB;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 145px;
+  left: 535.07px;
+  position:absolute;
+}
+#pReqs_p
+{
+  color: #FBFBFB;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 15px;
+  left: 535.07px;
+  position:absolute;
+}
+#provide_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #FBFBFB;
+  font-size: 65px;
+  text-shadow: 0px 0px 20px #020008;
+  top: 25px;
+  position:absolute;
+}
+#offer1_p
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 300px;
+  left: 25px;
+  position:absolute;
+}
+#offer2_p
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 300px;
+  left: 370px;
+  position:absolute;
+}
+#offer3_p
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 300px;
+  left: 730px;
+  position:absolute;
+}
+#offer4_p
+{
+  color: #FBFBFB;
+  text-shadow: 0px 0px 20px #020008;
+  top: 300px;
+  left: 1060px;
+  position:absolute;
+}
+#service_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 1060px;
+  position:absolute;
+}
+#street_p
+{
+  color: #FBFBFB;
+  font-size: 20px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 95px;
+  left: 950px;
+  position:absolute;
+}
+#tube_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 655px;
+  position:absolute;
+}
+#twitter_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #887bb3;
+  font-size: 20px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 20px;
+  left: 520px;
+  position:absolute;
+}
+/*End P's*/
+
+/*Start Images*/
+#a_pic
+{
+  top: 15px;
+  left: 160px;
+  position: absolute;
+}
+#main_pic
+{
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+#misc_pic
+{
+  top: -16px;
+  position: absolute;
+  opacity: .85;
+}
+#offer_pic
+{
+  top: -16px;
+  position: absolute;
+  opacity: .5;
+}
+#offer1_pic
+{
+  top: 125px;
+  left: 25px;
+  position: absolute;
+  border-radius: 30px;
+}
+#offer2_pic
+{
+  top: 125px;
+  left: 370px;
+  position: absolute;
+  border-radius: 30px;
+}
+#offer3_pic
+{
+  top: 125px;
+  left: 730px;
+  position: absolute;
+  border-radius: 30px;
+}
+#offer4_pic
+{
+  top: 125px;
+  left: 1060px;
+  position: absolute;
+  border-radius: 30px;
+}
+/*End Images*/
+
+/*Start Buttons*/
+#signin_button
+{
+  box-shadow: 0px 0px 20px #15093A;
+  top: 180px;
+  left: 73.835px;
+  position:absolute;
+}
+#signup_button
+{
+  background-color: #020008;
+  color: #FBFBFB;
+  border-radius: 30px;
+  box-shadow: 0px 5px 20px;
+  top: 150px;
+  left: 148.195px;
+  position:absolute;
+}
+#signup_button2
+{
+  box-shadow: 0px 0px 20px #15093A;
+  top: 200px;
+  left: 69.39px;
+  position:absolute;
+}
+/*End Buttons*/
+
+/*Start Design*/
+#footer1_design
+{
+  background-color: #413175;
+  height: 50px;
+	width: 5px;
+  top: 25px;
+  left: 295px;
+	position: absolute;
+}
+#misc1_design
+{
+  border-style: dashed;
+  color: silver;
+  height: 175px;
+	width: 0px;
+  top: 25px;
+  left: 441.666667px;
+	position: absolute;
+}
+#misc2_design
+{
+  border-style: dashed;
+  color: silver;
+  height: 175px;
+	width: 0px;
+  top: 25px;
+  left: 883.333333px;
+	position: absolute;
+}
+#offer1_design
+{
+  background-color: #8E8A9A;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 25px;
+	position: absolute;
+}
+#offer2_design
+{
+  background-color: #8E8A9A;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 370px;
+	position: absolute;
+}
+#offer3_design
+{
+  background-color: #8E8A9A;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 730px;
+	position: absolute;
+}
+#offer4_design
+{
+  background-color: #8E8A9A;
+  height: 5px;
+	width: 75px;
+  top: 275px;
+  left: 1060px;
+	position: absolute;
+}
+/*End Design*/
+
+/*Start Vids*/
+#vid
+{
+  position: absolute;
+  top: -130px;
+  left: 8px;
+}
+/*End Vids*/

@@ -1,26 +1,55 @@
-<h2>Log in</h2>
+<!--log in page-->
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!--start header-->
+  <div id="header_div">
+    <nav>
+      <h1 id="name_h1">IST</h1>
+      <img id="a_pic" src="/assets/letterA.png" style ="width:70px;">
+      <p id="home_p"><a href ="/">HOME</a></p>
+      <p id="careers_p"><a href ="/careers">CAREERS</a></p>
+      <p id="service_p"><a href ="/services">SERVICES</a></p>
+      <p id="gallery_p"><a href ="/gallery">GALLERY</a></p>
+    </nav>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
+<!--end header-->
+<div id="main_div2">
+  <img id="main_pic" src="/assets/in_upPic.gif" style ="width:1325px; height:600px;">
+  <div id="form_div">
+    <h2 id="signin_h2">Sign in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div id="email_div">
+      <%= f.label "Email:" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    <div id="password_div">
+      <%= f.label "Password:" %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+    <div id="remember_div">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <% end -%>
+    <div id="signin_button">
+      <%= f.submit "Sign in" %>
+    </div>
+    <% end %>
+    <div id="links_div">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-<% end %>
+</div>
+<!--end main-->
 
-<%= render "devise/shared/links" %>
+<!--Start footer-->
+<div id="footer_div2">
+  <h3 id="follow_h3">Follow ISTA</h3>
+  <div id="footer1_div"></div>
+  <p id="twitter_p"><a href ="https://twitter.com/NASA">Twitter</a></p>
+  <p id="tube_p"><a href ="https://www.youtube.com/user/NASAtelevision/about">Youtube</a></p>
+  <p id="gram_p"><a href ="https://www.instagram.com/nasa/?hl=en">Instagram</a></p>
+  <p id="corp_p">©2018 ISTA Corp.</p>
+</div>
+<!--End footer-->
