@@ -10,13 +10,13 @@
 	<p></p>
 
 
-// current person logged in
+<!-- // current person logged in -->
 	<% if @current_user %>
 	    <h2><%= @current_user.fname %>'s Ships Feed</h2>
 
 	    <% @current_user.ships.each do |ship|%>
 
-//this is all of users ships
+<!-- //this is all of users ships -->
 	      <div id="allships">
 	          <h4>Ship Name: <%= ship.veh_name%></h4>
 	          <p><%= ship.veh_location%></p>
@@ -24,7 +24,7 @@
 
 						<div id="delete_button">
 	          		<form class="" action="/ships/<%= ship.id%>" method="DELETE">
-	                 <input type="submit" name="<%= ship.id%>" value="Delete ships">
+	                 <input type="submit" name="" value="Delete ships">
 	          		</form>
 						</div>
 
@@ -37,9 +37,9 @@
 	    <% end %>
 	<% end %>
 
-
+<!--
 //form to create a ship on the "user profile homepage"
-//this form will pop up as a modal on user profile page
+//this form will pop up as a modal on user profile page -->
 
 	<form class="" action="/ships_edit/<%=@ship.id%>" method="post">
 	    <input type="hidden" name="_method" value="PUT">
@@ -64,6 +64,78 @@
 	    <input type="submit" name="" value="submit">
 	</form>
 
+
+	<!-- this is the feed for your trips  -->
+	<!-- //current person logged in -->
+	<% if @current_user %>
+	    <h2><%= @current_user.fname %>'s Trips Feed</h2>
+
+	    <h2><% @current_user.trip.each do |trip|%></h2>
+
+	<!-- //all of the users trips -->
+	      <div id="alltrips">
+	          <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
+	            <p>It is starting at <%= trip.origin%></p>
+	            <p>And going to <%= trip.destination%></p>
+	            <p>Total distance: <%= trip.distance%> million miles.</p>
+	            <p><%= trip.seats%> seats</p>
+	            <p>Total cost: <%= trip.cost%></p>
+
+	          <form class="" action="/trips/<%= trip.id%>" method="DELETE">
+	                 <input type="submit" name="" value="Delete trips">
+	          </form>
+
+	          <button onclick="location.href='/trips/<%= trip.id %>'" id="edit">Edit Trip</button>
+
+	      </div>
+
+	    <% end %>
+	<% end %>
+
+
+	<!-- //form to create a trip for "trip feed" page -->
+
+	<form class="" action="/trips_edit/<%=@user.id%>" method="post">
+	    <input type="hidden" name="_method" value="PUT">
+
+	    <select name="[create]description">
+	        <option value="passenger">passenger</option>
+	        <option value="freight">freight</option>
+	    </select>
+
+	    <select name="[create]origin">
+	        <option value="Venus">Venus</option>
+	        <option value="Earth">Earth</option>
+	        <option value="Moon">Moon</option>
+	        <option value="Mars">Mars</option>
+	        <option value="Ceres">Ceres</option>
+	    </select>
+
+	    <select name="[create]destination">
+	        <option value="Earth">Earth</option>
+	        <option value="Moon">Moon</option>
+	        <option value="Mars">Mars</option>
+	        <option value="Ceres">Ceres</option>
+	        <option value="Europa">Europa</option>
+	    </select>
+
+	<!-- // put in distance output??? -->
+	    <p>Total distance: <%= trip.distance%> million miles.</p>
+
+
+	    <select name="[create]seats">
+	        <option value="6">6</option>
+	        <option value="10">10</option>
+	        <option value="12">12</option>
+	    </select>
+
+	<!-- // put in cost output??? -->
+	    <p>Total cost: <%= trip.cost%></p>
+
+	<!-- //submit that attaches to user id -->
+	    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+	    <input type="submit" name="" value="submit">
+	</form>
 
 </body>
 </html>

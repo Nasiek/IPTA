@@ -3,10 +3,10 @@
 
 
 
-//this shows all ships
+<!-- //this shows all ships -->
 
     <div id="allships">
-        <h4><% @ships.each do |ship| %></h4>
+        <h4><% @ship.each do |ship| %></h4>
 
         <h4><a href="/ships/personal/<%= ship_id %>"><h4><%= ship.veh_name%></a></h4>
             <p><%= ship.veh_location%></p>

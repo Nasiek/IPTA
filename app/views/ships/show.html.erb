@@ -1,2 +1,29 @@
 <h1>Ships#personal</h1>
 <p>Find me in app/views/ships/personal.html.erb</p>
+
+
+<% if @current_user %>
+    <h2><%= @current_user.fname %>'s Ships Feed</h2>
+
+    <% @current_user.ships.each do |ship|%>
+
+<!-- //this is all of users ships -->
+      <div id="allships">
+          <h4>Ship Name: <%= ship.veh_name%></h4>
+          <p><%= ship.veh_location%></p>
+          <p>It has <%= ship.seats%> seats</p>
+
+          <div id="delete_button">
+              <form class="" action="/ships/<%= ship.id%>" method="DELETE">
+                 <input type="submit" name="" value="Delete ships">
+              </form>
+          </div>
+
+          <div id="edit_button">
+              <button onclick="location.href='/ships/<%= ship.id %>/edit'" id="edit">Edit Ship</button>
+          </div>
+
+      </div>
+
+    <% end %>
+<% end %>
