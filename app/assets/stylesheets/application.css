@@ -75,6 +75,20 @@
 {
   color: #FBFBFB;
 }
+#footer_div2 a:link
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#footer_div2 a:visited
+{
+  color: #887bb3;
+  text-decoration: none;
+}
+#footer_div2 a:hover
+{
+  color: #FBFBFB;
+}
 #header_div a:link
 {
   color: #413175;
@@ -133,7 +147,39 @@
 }
 /*End Links*/
 
+/*Start Pop-Ups*/
+#destination_p:hover #destination_popUp
+{
+  opacity: 1;
+}
+#destination_popUp
+{
+  height: 160px;
+  width: 177.78px;
+  top: 1640px;
+  left: 145px;
+  background-color: white;
+  border-radius: 1pc;
+	position: absolute;
+  text-align: center;
+  transition: 3s ease;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+/*End Pop-Ups*/
+
 /*Start Divs*/
+#bottombar_div
+{
+  height: 25px;
+  width: 250px;
+  top: 375px;
+  left: 125px;
+	position: absolute;
+  background-color: #8E8A9A;
+  border-radius: 0px 100px 0px 0px;
+}
 #confirm_div
 {
   top: 140px;
@@ -256,9 +302,27 @@
 	position: absolute;
   text-align: center;
 }
+#screen_div
+{
+  height: 200px;
+  width: 250px;
+  background-color: #84EDFE;
+  top: 200px;
+  left: 125px;
+	position: absolute;
+  opacity: .7;
+  border-radius: 50px;
+}
 /*End Divs*/
 
 /*Start headers*/
+#destination_h2
+{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 12px;
+  color: #413175;
+  text-shadow: 0px 0px 15px #8E8A9A;
+}
 #follow_h3
 {
   font-family: 'Cinzel Decorative', cursive;
@@ -270,6 +334,7 @@
 }
 #ISTA_h2
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 50px;
   text-shadow: 0px 0px 25px #020008;
@@ -302,43 +367,48 @@
   font-size: 40px;
   text-shadow: 0px 0px 20px #020008;
   top: 0px;
-  left: 50px;
+  left: 25px;
   position: absolute;
 }
 #offer1_h3
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
   top: 225px;
-  left: 25px;
+  left: 10px;
   position: absolute;
 }
 #offer2_h3
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
   top: 225px;
-  left: 370px;
+  left: 355px;
   position: absolute;
 }
 #offer3_h3
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
   top: 225px;
-  left: 730px;
+  left: 715px;
   position: absolute;
 }
 #offer4_h3
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
   top: 225px;
-  left: 1060px;
+  left: 1020px;
   position: absolute;
 }
 #signin_h2
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #15093A;
   text-shadow: 0px 0px 20px #887bb3;
   top: 0px;
@@ -347,6 +417,7 @@
 }
 #signup_h2
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #15093A;
   text-shadow: 0px 0px 20px #887bb3;
   top: 0px;
@@ -367,6 +438,7 @@
 }
 #cityState_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 20px;
   text-shadow: 0px 0px 25px #020008;
@@ -386,12 +458,20 @@
 }
 #destination_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 25px;
   text-shadow: 0px 0px 25px #020008;
   top: 15px;
   left: 138.893334px;
   position:absolute;
+}
+#destinations_p
+{
+  font-family: 'Cinzel Decorative', cursive;
+  color: #413175;
+  text-shadow: 0px 0px 5px #8E8A9A;
+  font-size: 12px;
 }
 #gallery_p
 {
@@ -443,6 +523,7 @@
 }
 #pEarn_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 25px;
   text-shadow: 0px 0px 25px #020008;
@@ -452,6 +533,7 @@
 }
 #pJobs_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 25px;
   text-shadow: 0px 0px 25px #020008;
@@ -461,6 +543,7 @@
 }
 #pReqs_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 25px;
   text-shadow: 0px 0px 25px #020008;
@@ -479,34 +562,39 @@
 }
 #offer1_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
   top: 300px;
-  left: 25px;
+  left: 10px;
   position:absolute;
 }
 #offer2_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
-  top: 300px;
-  left: 370px;
+  top: 295px;
+  left: 355px;
   position:absolute;
 }
 #offer3_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
-  top: 300px;
-  left: 730px;
+  top: 295px;
+  left: 715px;
+  padding-right: 350px;
   position:absolute;
 }
 #offer4_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   text-shadow: 0px 0px 20px #020008;
-  top: 300px;
-  left: 1060px;
+  top: 295px;
+  left: 1020px;
   position:absolute;
 }
 #service_p
@@ -520,6 +608,7 @@
 }
 #street_p
 {
+  font-family: 'Cinzel Decorative', cursive;
   color: #FBFBFB;
   font-size: 20px;
   text-shadow: 0px 0px 25px #020008;
@@ -577,28 +666,28 @@
 #offer1_pic
 {
   top: 125px;
-  left: 25px;
+  left: 10px;
   position: absolute;
   border-radius: 30px;
 }
 #offer2_pic
 {
   top: 125px;
-  left: 370px;
+  left: 355px;
   position: absolute;
   border-radius: 30px;
 }
 #offer3_pic
 {
   top: 125px;
-  left: 730px;
+  left: 715px;
   position: absolute;
   border-radius: 30px;
 }
 #offer4_pic
 {
   top: 125px;
-  left: 1060px;
+  left: 1020px;
   position: absolute;
   border-radius: 30px;
 }
@@ -644,7 +733,7 @@
 #misc1_design
 {
   border-style: dashed;
-  color: silver;
+  color: #8E8A9A;
   height: 175px;
 	width: 0px;
   top: 25px;
@@ -654,7 +743,7 @@
 #misc2_design
 {
   border-style: dashed;
-  color: silver;
+  color: #8E8A9A;
   height: 175px;
 	width: 0px;
   top: 25px;
@@ -667,7 +756,7 @@
   height: 5px;
 	width: 75px;
   top: 275px;
-  left: 25px;
+  left: 10px;
 	position: absolute;
 }
 #offer2_design
@@ -676,7 +765,7 @@
   height: 5px;
 	width: 75px;
   top: 275px;
-  left: 370px;
+  left: 355px;
 	position: absolute;
 }
 #offer3_design
@@ -685,7 +774,7 @@
   height: 5px;
 	width: 75px;
   top: 275px;
-  left: 730px;
+  left: 715px;
 	position: absolute;
 }
 #offer4_design
@@ -694,7 +783,7 @@
   height: 5px;
 	width: 75px;
   top: 275px;
-  left: 1060px;
+  left: 1020px;
 	position: absolute;
 }
 /*End Design*/
