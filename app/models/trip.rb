@@ -2,6 +2,9 @@ class Trip < ApplicationRecord
     belongs_to :user
     has_and_belongs_to_many :ships
 
+    validates :description, :origin, :destination, :seats, :user_id, presence: true
+
+
     validate :cost_minimum
 
 
