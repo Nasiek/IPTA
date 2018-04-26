@@ -6,11 +6,136 @@
 </head>
 <body>
 	<h1>Welcome, <%= current_user.email %></h1>
-
 	<img src="/assets/projector.png" style ="width:400px; height:400px;">
 	<div id="screen_div"></div>
 	<div id="sidebar_div"></div>
 	<div id="topbar_div"></div>
 	<div id="bottombar_div"></div>
+	<p></p>
+
+
+<!-- // current person logged in -->
+	    <h2><%= current_user.fname %>'s Ships Feed</h2>
+
+	    <% current_user.ships.each do |ship|%>
+
+<!-- //this is all of users ships -->
+	      <div id="allships">
+	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %>
+
+	          </h4>
+	          <p>Location:<%= ship.veh_location%></p>
+	          <p>Number of seats: <%= ship.seats%></p>
+
+						<div id="delete_button">
+	          		<form class="" action="/ships/<%= ship.id%>" method="DELETE">
+	                 <input type="submit" name="" value="Delete ship">
+	          		</form>
+						</div>
+
+						<div id="edit_button">
+	          		<button onclick="location.href='/ships/<%= ship.id %>/edit'" id="edit">Edit Ship</button>
+						</div>
+
+	      </div>
+
+	    <% end %>
+
+<!--
+//form to create a ship on the "user profile homepage"
+//this form will pop up as a modal on user profile page -->
+
+	<h2>Create a ship</h2>
+
+	<form class="" action="/ships/new" method="POST">
+<p>Name of Ship</p>
+	    <input type="text" name="[create]veh_name">
+
+	    <select name="[create]veh_location">
+	        <option value="Venus">Venus</option>
+	        <option value="Earth">Earth</option>
+	        <option value="Moon">Moon</option>
+	        <option value="Mars">Mars</option>
+	        <option value="Ceres">Ceres</option>
+	    </select>
+
+	    <select name="[create]seats">
+	        <option value="6">6</option>
+	        <option value="10">10</option>
+	        <option value="12">12</option>
+	    </select>
+
+			<input type="file" name="user[avatar]" id="user_avatar">
+
+
+	    <input type="submit" name="" value="submit">
+	</form>
+
+
+	<!-- this is the feed for your trips  -->
+	<!-- //current person logged in -->
+	<% if @current_user %>
+	    <h2><%= @current_user.fname %>'s Trips Feed</h2>
+
+	    <h2><% @current_user.trip.each do |trip|%></h2>
+
+	<!-- //all of the users trips -->
+	      <div id="alltrips">
+	          <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
+	            <p>It is starting at <%= trip.origin%></p>
+	            <p>And going to <%= trip.destination%></p>
+	            <p>Total distance: <%= trip.distance%> million miles.</p>
+	            <p><%= trip.seats%> seats</p>
+	            <p>Total cost: <%= trip.cost%></p>
+
+	          <form class="" action="/trips/<%= trip.id%>" method="DELETE">
+	                 <input type="submit" name="" value="Delete trips">
+	          </form>
+
+	          <button onclick="location.href='/trips/<%= trip.id %>'" id="edit">Edit Trip</button>
+
+	      </div>
+
+	    <% end %>
+	<% end %>
+
+
+	<!-- //form to create a trip for "trip feed" page -->
+
+	<form class="" action="/trips" method="post">
+	    <input type="hidden" name="_method" value="PUT">
+
+	    <select name="[create]description">
+	        <option value="passenger">passenger</option>
+	        <option value="freight">freight</option>
+	    </select>
+
+	    <select name="[create]origin">
+	        <option value="Venus">Venus</option>
+	        <option value="Earth">Earth</option>
+	        <option value="Moon">Moon</option>
+	        <option value="Mars">Mars</option>
+	        <option value="Ceres">Ceres</option>
+	    </select>
+
+	    <select name="[create]destination">
+	        <option value="Earth">Earth</option>
+	        <option value="Moon">Moon</option>
+	        <option value="Mars">Mars</option>
+	        <option value="Ceres">Ceres</option>
+	        <option value="Europa">Europa</option>
+	    </select>
+
+
+
+	    <select name="[create]seats">
+	        <option value="6">6</option>
+	        <option value="10">10</option>
+	        <option value="12">12</option>
+	    </select>
+
+	    <input type="submit" name="" value="submit">
+	</form>
+
 </body>
 </html>

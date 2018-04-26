@@ -1,2 +1,26 @@
 <h1>Trips#feed</h1>
 <p>Find me in app/views/trips/feed.html.erb</p>
+
+
+<!-- //all of the users trips -->
+  <div id="alltrips">
+      <h4><% @trip.each do |trip| %></h4>
+
+      <p>
+        <%= user.fname %> is transporting <%= trip.driscription%>
+          
+        </p>
+      <p>
+        It is starting at <%= trip.origin%>
+        
+      </p>
+      <p>And going to <%= trip.destination%>
+        
+      </p>
+      <p>Total distance: <%= trip.distance%> million miles.</p>
+      <p><%= trip.seats%> seats</p>
+      <p>Total cost: <%= trip.cost%></p>
+
+  </div>
+
+    <% end %>

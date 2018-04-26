@@ -5,8 +5,16 @@
 <p>Hover over the image to see the effect.</p>
 
 <div class="container">
-  <img src="/assets/test.png" class="image" style="width:50%">
-  <div class="middle">
-    <div class="text"><a href ="/welcome/index">Normandy</a></div>
-  </div>
+    <img src="/assets/test.png" class="image" style="width:50%">
+        <div class="middle">
+            <% @ship.each do |ship| %>
+            <div class="text"><h4><a href="/ships/personal/<%= ship_id %>"><h4><%= ship.veh_name%></a></h4>
+                  <!-- //this shows all ships -->
+                      <p><%= ship.veh_location%></p>
+                      <p>It has <%= ship.seats%> seats</p>
+
+                  <% end %>
+
+            </div>
+        </div>
 </div>

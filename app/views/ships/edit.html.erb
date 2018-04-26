@@ -1,2 +1,40 @@
 <h1>Ships#edit</h1>
 <p>Find me in app/views/ships/edit.html.erb</p>
+
+<!--
+//form to edit a ship from "ship profile" page
+//picks the ship from ship.id -->
+<form class="" action="/ships/<%=@ship.id%>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+<!-- //change vehicle name -->
+    <input type="text" name="[update]veh_name" value="<%= @ship.veh_name %>">
+
+<!-- //drop down menus for location and seats -->
+    <select name="[update]veh_location">
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Moon">Moon</option>
+        <option value="Mars">Mars</option>
+        <option value="Ceres">Ceres</option>
+    </select>
+
+    <select name="[update]seats">
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+    </select>
+
+    <input type="file" name="user[avatar]" id="user_avatar">
+
+<!-- //subit button that attaches it to current user id -->
+    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+    <input type="submit" name="" value="submit">
+</form>
+
+<!-- //delete ship -->
+<div id="delete_button">
+    <form class="" action="/ships/<%= ship.id%>" method="DELETE">
+       <input type="submit" name="<%= ship.id%>" value="Delete ships">
+    </form>
+</div>
