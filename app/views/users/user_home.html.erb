@@ -27,16 +27,6 @@
 	          <p>Location:<%= ship.veh_location%></p>
 	          <p>Number of seats: <%= ship.seats%></p>
 
-						<div id="delete_button">
-	          		<form class="" action="/ships/<%= ship.id%>" method="DELETE">
-	                 <input type="submit" name="" value="Delete ship">
-	          		</form>
-						</div>
-
-						<div id="edit_button">
-	          		<button onclick="location.href='/ships/<%= ship.id %>/edit'" id="edit">Edit Ship</button>
-						</div>
-
 	      </div>
 
 	    <% end %>
