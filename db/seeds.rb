@@ -21,7 +21,7 @@ user_list = [
 ]
 
 user_list.each do |fname, lname, email, encrypted_password|
-    User.create( fname: fname, lname: lname, email: email, encrypted_password: encrypted_password)
+    User.create( fname: fname, lname: lname, email: email, password: encrypted_password)
 end
 
 

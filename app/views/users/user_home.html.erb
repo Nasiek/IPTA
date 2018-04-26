@@ -41,8 +41,7 @@
 //form to create a ship on the "user profile homepage"
 //this form will pop up as a modal on user profile page -->
 
-	<form class="" action="/ships_edit/<%=@ship.id%>" method="post">
-	    <input type="hidden" name="_method" value="PUT">
+	<form class="" action="/ships" method="post">
 
 	    <input type="text" name="[create]veh_name" value="<%= @ship.veh_name %>">
 
