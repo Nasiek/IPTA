@@ -8,7 +8,7 @@
 
 <!-- //all of the users trips -->
   <div id="alltrips">
-      <h4><% @trip do |trip| %></h4>
+      <h4><% @trip.each do |trip| %></h4>
 
       <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
       <p>It is starting at <%= trip.origin%></p>

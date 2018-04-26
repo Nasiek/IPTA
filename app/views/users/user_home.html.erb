@@ -11,20 +11,21 @@
 
 
 <!-- // current person logged in -->
-	<% if @current_user %>
-	    <h2><%= @current_user.fname %>'s Ships Feed</h2>
+	    <h2><%= current_user.fname %>'s Ships Feed</h2>
 
-	    <% @current_user.ships.each do |ship|%>
+	    <% current_user.ships.each do |ship|%>
 
 <!-- //this is all of users ships -->
 	      <div id="allships">
-	          <h4>Ship Name: <%= ship.veh_name%></h4>
-	          <p><%= ship.veh_location%></p>
-	          <p>It has <%= ship.seats%> seats</p>
+	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %>
+
+	          </h4>
+	          <p>Location:<%= ship.veh_location%></p>
+	          <p>Number of seats: <%= ship.seats%></p>
 
 						<div id="delete_button">
 	          		<form class="" action="/ships/<%= ship.id%>" method="DELETE">
-	                 <input type="submit" name="" value="Delete ships">
+	                 <input type="submit" name="" value="Delete ship">
 	          		</form>
 						</div>
 
@@ -35,15 +36,16 @@
 	      </div>
 
 	    <% end %>
-	<% end %>
 
 <!--
 //form to create a ship on the "user profile homepage"
 //this form will pop up as a modal on user profile page -->
 
-	<form class="" action="/ships" method="post">
+	<h2>Create a ship</h2>
 
-	    <input type="text" name="[create]veh_name" value="<%= @ship.veh_name %>">
+	<form class="" action="/ships/new" method="POST">
+<p>Name of Ship</p>
+	    <input type="text" name="[create]veh_name">
 
 	    <select name="[create]veh_location">
 	        <option value="Venus">Venus</option>
@@ -61,7 +63,7 @@
 
 			<input type="file" name="user[avatar]" id="user_avatar">
 
-	    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+
 	    <input type="submit" name="" value="submit">
 	</form>
 
@@ -96,7 +98,7 @@
 
 	<!-- //form to create a trip for "trip feed" page -->
 
-	<form class="" action="/trips_edit/<%=@user.id%>" method="post">
+	<form class="" action="/trips" method="post">
 	    <input type="hidden" name="_method" value="PUT">
 
 	    <select name="[create]description">
@@ -120,8 +122,6 @@
 	        <option value="Europa">Europa</option>
 	    </select>
 
-	<!-- // put in distance output??? -->
-	    <p>Total distance: <%= trip.distance%> million miles.</p>
 
 
 	    <select name="[create]seats">
@@ -130,11 +130,6 @@
 	        <option value="12">12</option>
 	    </select>
 
-	<!-- // put in cost output??? -->
-	    <p>Total cost: <%= trip.cost%></p>
-
-	<!-- //submit that attaches to user id -->
-	    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
 	    <input type="submit" name="" value="submit">
 	</form>
 

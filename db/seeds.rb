@@ -26,7 +26,7 @@ end
 
 
 trip_list = [
-  [ "freight", "Earth", "Mars", 50.25, 2, 100500, 0],
+  [ "freight", "Earth", "Mars", 50.25, 2, 100500, 11],
   [ "passengers", "Venus", "Mars", 75.25, 1, 75250, 1],
   [ "freight", "Moon", "Ceres", 165, 2, 330000, 2],
   [ "passengers", "Mars", "Europa", 340, 3, 1020000, 3],
@@ -37,7 +37,7 @@ trip_list = [
   [ "freight", "Venus", "Moon", 25.25, 3, 75750, 8],
   [ "passengers", "Moon", "Mars", 50, 4, 200000, 9],
   [ "freight", "Moon", "Europa", 390, 5, 1950000, 10],
-  [ "passengers", "Venus", "Europa", 415.25, 1, 415250, 0],
+  [ "passengers", "Venus", "Europa", 415.25, 1, 415250, 11],
   [ "freight", "Mars", "Ceres", 115, 2, 230000, 1],
   [ "passengers", "Venus", "Earth", 25, 3, 75000, 2],
   [ "freight", "Venus", "Ceres", 190.25, 4, 761000, 3],
@@ -49,7 +49,7 @@ end
 
 
 ship_list = [
-  [ "Superflyer", "Earth", 10, 0],
+  [ "Superflyer", "Earth", 10, 11],
   [ "Thunderbolt", "Mars", 10, 1],
   [ "Moonmagic", "Moon", 6, 2],
   [ "Sunburst", "Mars", 6, 3],
@@ -60,7 +60,7 @@ ship_list = [
   [ "Nebuchadnezzar", "Venus", 6, 8],
   [ "Mysterymachine", "Moon", 12, 9],
   [ "Enterprise", "Moon", 6, 10],
-  [ "Nautilus", "Venus", 10, 0],
+  [ "Nautilus", "Venus", 10, 11],
   [ "Jolly Roger", "Mars", 6, 1],
   [ "Astrotrain", "Venus", 6, 2],
   [ "Botany Bay", "Ceres", 6, 3],
