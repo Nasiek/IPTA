@@ -5,8 +5,12 @@
 	<title>User Homepage</title>
 </head>
 <body>
-	<h1>Welcome, <%= current_user.fname %></h1>
-
+	<h1>Welcome, <%= current_user.email %></h1>
+	<img src="/assets/projector.png" style ="width:400px; height:400px;">
+	<div id="screen_div"></div>
+	<div id="sidebar_div"></div>
+	<div id="topbar_div"></div>
+	<div id="bottombar_div"></div>
 	<p></p>
 
 
@@ -17,7 +21,7 @@
 
 <!-- //this is all of users ships -->
 	      <div id="allships">
-	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %> 
+	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %>
 
 	          </h4>
 	          <p>Location:<%= ship.veh_location%></p>
