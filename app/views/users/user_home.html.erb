@@ -46,6 +46,7 @@
 	<form class="" action="/ships/new" method="POST">
 <p>Name of Ship</p>
 	    <input type="text" name="[create]veh_name">
+		<p>Vehicle Location</p>
 
 	    <select name="[create]veh_location">
 	        <option value="Venus">Venus</option>
@@ -54,16 +55,16 @@
 	        <option value="Mars">Mars</option>
 	        <option value="Ceres">Ceres</option>
 	    </select>
-
+	<p>Number of Seats</p>
 	    <select name="[create]seats">
 	        <option value="6">6</option>
 	        <option value="10">10</option>
 	        <option value="12">12</option>
 	    </select>
-
+<p>Upload an image of your ship</p>
 			<input type="file" name="user[avatar]" id="user_avatar">
 
-
+<br>
 	    <input type="submit" name="" value="submit">
 	</form>
 
@@ -87,7 +88,7 @@
 	          <form class="" action="/trips/<%= trip.id%>" method="DELETE">
 	                 <input type="submit" name="" value="Delete trips">
 	          </form>
-
+<br>
 	          <button onclick="location.href='/trips/<%= trip.id %>'" id="edit">Edit Trip</button>
 
 	      </div>
@@ -97,14 +98,14 @@
 
 
 	<!-- //form to create a trip for "trip feed" page -->
-
-	<form class="" action="/trips" method="post">
-	    <input type="hidden" name="_method" value="PUT">
-
+<h2>Create a trip</h2>
+	<form class="" action="/trips" method="POST">
+		<p>Ship Description</p>
 	    <select name="[create]description">
 	        <option value="passenger">passenger</option>
 	        <option value="freight">freight</option>
 	    </select>
+		<p>Trip Origin:</p>
 
 	    <select name="[create]origin">
 	        <option value="Venus">Venus</option>
@@ -113,6 +114,7 @@
 	        <option value="Mars">Mars</option>
 	        <option value="Ceres">Ceres</option>
 	    </select>
+		<p>Trip Description</p>
 
 	    <select name="[create]destination">
 	        <option value="Earth">Earth</option>
@@ -123,7 +125,7 @@
 	    </select>
 
 
-
+		<p>Number of Seats</p>
 	    <select name="[create]seats">
 	        <option value="6">6</option>
 	        <option value="10">10</option>
