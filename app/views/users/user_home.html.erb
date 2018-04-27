@@ -5,7 +5,7 @@
 	<title>User Homepage</title>
 </head>
 <body>
-	<h1>Welcome, <%= current_user.email %></h1>
+	<h1>Welcome, <%= current_user.fname %></h1>
 	<img src="/assets/projector.png" style ="width:400px; height:400px;">
 	<div id="screen_div"></div>
 	<div id="sidebar_div"></div>
@@ -47,7 +47,7 @@
 
 	<h2>Create a ship</h2>
 
-	<form class="" action="/ships/new" method="POST">
+	<form class="" action="/ships" method="POST">
 <p>Name of Ship</p>
 	    <input type="text" name="[create]veh_name">
 		<p>Vehicle Location</p>
