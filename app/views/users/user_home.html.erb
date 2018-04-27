@@ -15,13 +15,13 @@
 
 
 <!-- // current person logged in -->
-	    <h2><%= current_user.fname %>'s Ships Feed</h2>
+	    <h2><%= current_user.fname %>'s Profile</h2>
 
 	    <% current_user.ships.each do |ship|%>
 
 <!-- //this is all of users ships -->
 	      <div id="allships">
-	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %>
+	          <h4>Ship Name: <%= link_to ship.veh_name, ship_path(ship) %>
 
 	          </h4>
 	          <p>Location:<%= ship.veh_location%></p>
