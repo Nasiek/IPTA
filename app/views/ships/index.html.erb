@@ -8,7 +8,9 @@
     <img src="/assets/test.png" class="image" style="width:50%">
         <div class="middle">
             <% @ship.each do |ship| %>
-            <div class="text"><h4><a href="/ships/personal/<%= ship_id %>"><h4><%= ship.veh_name%></a></h4>
+            <div class="text">
+              <h4><a href="/ships/
+                <%= ship_id %>"><%= ship.veh_name%></a></h4>
                   <!-- //this shows all ships -->
                       <p><%= ship.veh_location%></p>
                       <p>It has <%= ship.seats%> seats</p>

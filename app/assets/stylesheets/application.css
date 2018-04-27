@@ -167,6 +167,15 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+#newShip_div
+{
+  height: 300px;
+  width: 400px;
+  opacity: .5;
+  background-color: lightblue;
+  border-radius: 50px;
+  font-family: 'Cinzel Decorative', cursive;
+}
 /*End Pop-Ups*/
 
 /*Start Divs*/
