@@ -32,9 +32,6 @@ class TripsController < ApplicationController
     redirect_to "/users/home"
   end
 
-  def edit
-  end
-
 private
 def trip_params
 params.require(:trip).permit(:description, :destination, :origin, :seats)

@@ -15,8 +15,8 @@
 
 
 <!-- // current person logged in -->
-	    <h2><%= current_user.fname %>'s Profile</h2>
-
+	    <h2><%= current_user.fname %>'s Profile</h2><br>
+<h2>Your Ships </h2>
 	    <% current_user.ships.each do |ship|%>
 
 <!-- //this is all of users ships -->
@@ -30,6 +30,27 @@
 	      </div>
 
 	    <% end %>
+<h2>
+Your Trips
+</h2>
+<!-- User's Trips -->
+
+<% current_user.trips.each do |trip|%>
+
+<!-- //this is all of users ships -->
+	      <div id="alltrips">
+	          <h4>Trip Description/Type: <%= link_to trip.description, trips_path(trip) %>
+
+	          </h4>
+	          <p>Cost: <%= trip.cost%></p>
+	          <p>Number of Seats: <%= trip.seats%></p>
+
+	      </div>
+
+	    <% end %>
+
+
+
 
 <!--
 //form to create a ship on the "user profile homepage"
