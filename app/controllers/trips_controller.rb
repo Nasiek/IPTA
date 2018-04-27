@@ -1,4 +1,10 @@
 class TripsController < ApplicationController
+  before_action :authenticate_user!
+
+  skip_before_action :verify_authenticity_token
+
+
+
   def index
       @trip = Trip.all
       @user = User.all
@@ -43,7 +49,7 @@ class TripsController < ApplicationController
 
 private
 def trip_params
-params.require(:trip).permit(:description, :destination, :origin, :seats)
+params.require(:create).permit(:description, :destination, :origin, :seats)
   end
 
 
