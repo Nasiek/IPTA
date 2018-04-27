@@ -19,7 +19,7 @@ end
 
   def edit
       @user = current_user
-      @ship = current_user.ships.find(params[:id])
+      @ship = Ship.find(params[:format])      
   end
 
 def personal
@@ -27,8 +27,20 @@ def personal
 
 end
 
+def update
+@ship = Ship.find(params[:id])
+@shipupdate = @ship.update(update_params)
+
+redirect_to ship_path(@ship)
+end
+
   def delete
   end
+
+private
+def update_params 
+params.require(:update).permit(:veh_name, :veh_location, :seats, :avatar)
+end
 
 
 

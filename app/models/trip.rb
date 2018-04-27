@@ -1,6 +1,7 @@
 class Trip < ApplicationRecord
     belongs_to :user
-    has_and_belongs_to_many :ships
+    has_many :ship_trips
+    has_many :ships, :through => :ship_trips
 
     validates :description, :origin, :destination, :seats, :user_id, presence: true
 

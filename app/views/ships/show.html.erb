@@ -14,7 +14,8 @@
 	<p>Lasted Edited:<%= @ship.updated_at.strftime("%B %d, %Y") %> </p>
 
 	<h2>Related Trip Info</h2>
-	<% if @ship.trips do |shiptrip| %>
+	<% if @ship.trips && @ship.trips.length > 0 %>
+ <%	 @ship.trips.each do |shiptrip| %>
 		
 	
 	<p>Trip Description: <%= shiptrip.description %> </p> 
@@ -25,7 +26,12 @@
 	<p>Trip Updated At:<%= shiptrip.updated_at %> </p>
 	<p>Trip Users: <%= shiptrip.user.fname %> </p> 
  <% end %>
+ <% else %>
+ <p>You have no trips. Want to add a trip?</p>
  <% end %>
+
+ 
+
 
 
 <h4> <%= link_to "See All Ships", "/ships/feed" %> </h4>
