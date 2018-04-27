@@ -18,8 +18,8 @@ end
   end
 
   def edit
-      @user = User.find(params[:id])
-      @ship = current_user.ships.find(params[:ship_id])
+      @user = current_user
+      @ship = current_user.ships.find(params[:id])
   end
 
 def personal

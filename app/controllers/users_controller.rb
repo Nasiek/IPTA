@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
 def create
-@ship = Ship.new(params[:create])
-if Ship.save
-redirect_to users_home_path
+		@ship = Ship.new(params[:create])
+				if Ship.save
+				redirect_to users_home_path
+				end
 end
 
 def delete
@@ -12,9 +13,8 @@ def delete
 def edit
 end
 
-def show	
+def show
 @ship = Ship.new
 end
 
-end
 end
