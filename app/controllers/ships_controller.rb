@@ -22,7 +22,7 @@ class ShipsController < ApplicationController
 
   def edit
       @user = current_user
-      @ship = current_user.ships.id
+      @ship = Ship.find(params[:format])
   end
 
   def personal
@@ -30,8 +30,20 @@ class ShipsController < ApplicationController
 
   end
 
+def update
+@ship = Ship.find(params[:id])
+@shipupdate = @ship.update(update_params)
+
+redirect_to ship_path(@ship)
+end
+
   def delete
   end
+
+private
+def update_params
+params.require(:update).permit(:veh_name, :veh_location, :seats, :avatar)
+end
 
 
 

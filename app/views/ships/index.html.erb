@@ -5,7 +5,7 @@
 <p>Hover over the image to see the effect.</p>
 
 <div class="container">
-    
+
     <% @ship.each do |ship| %>
     
           <img src="/assets/test.png" class="image" style="width:50%">
@@ -14,11 +14,13 @@
           <h4>
             <%= link_to ship.veh_name, ship_path(ship) %>
 
-        
+
         </h4>
           <!-- //this shows all ships -->
               <p><%= ship.veh_location%></p>
               <p>It has <%= ship.seats%> seats</p>
+
+
             </div>
           </div>
     <% end %>
