@@ -1,3 +1,4 @@
+
 class ShipsController < ApplicationController
   before_action :authenticate_user!
 
@@ -7,11 +8,13 @@ class ShipsController < ApplicationController
   def index
       @ship = Ship.all
   end
-def create
-s = Ship.new
-s.avatar = params[:file]
-redirect_to users_home_path
-end
+
+  def create
+      s = Ship.new
+      s.avatar = params[:file]
+      redirect_to users_home_path
+  end
+
   def show
       @ship = Ship.find(params[:id])
 
@@ -19,13 +22,13 @@ end
 
   def edit
       @user = current_user
-      @ship = current_user.ships.find(params[:id])
+      @ship = current_user.ships.id
   end
 
-def personal
+  def personal
       @ship = Ship.find(params[:id])
 
-end
+  end
 
   def delete
   end
