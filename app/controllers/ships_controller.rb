@@ -38,6 +38,9 @@ redirect_to ship_path(@ship)
 end
 
   def delete
+  @ship_delete = Ship.find(params[:id])
+    @ship_delete.destroy
+    redirect_to "/users/home"
   end
 
 private

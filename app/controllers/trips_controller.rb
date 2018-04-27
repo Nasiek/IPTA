@@ -33,6 +33,9 @@ class TripsController < ApplicationController
   end
 
   def delete
+    @trip_delete = Trip.find(params[:id])
+    @trip_delete.destroy
+    redirect_to "/users/home"
   end
 
   def edit
