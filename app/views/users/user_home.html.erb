@@ -9,12 +9,38 @@
 <body>
 	<h1>Welcome, <%= current_user.email %></h1>
 
+	<img id="background_pic" src="/assets/background.jpg" style= "width:1000px; height:550px;">
+	<div id="overlay_div"></div>
+
+	<img id="hologram_pic" src="/assets/projector.png" style= "width:125px; height:250px;">
+
+	<img id="hologram_pic2" src="/assets/projector.png" style= "width:125px; height:250px;">
+
+	<div id="base_div"></div>
+	<div id="base_div2"></div>
+
+	<img id="texture_pic" src="/assets/texture.jpg" style= "width:125px; height:80px;">
+	<img id="texture_pic2" src="/assets/texture.jpg" style= "width:125px; height:80px;">
+	<div id="screen_div">
+		<p>New Ship</p>
+		<p>View Ship</p>
+		<p>New Trip</p>
+		<p>View Trip</p>
+		<p>Edit Profile</p>
+		<p><%= link_to 'See You!', destroy_user_session_path, method: :delete,class: 'logout'%></p>
+
+
+	</div>
+
+	<div id="newShip_div"></div>
+
+<!--
 <div id="newShip_div">
 
 	<h2 id="ship_header">New Ship</h2>
 
 	<form class="" action="/ships" method="POST">
-		
+
 	<p id="name_p">Name:</p>
 	<input type="text" name="[create]veh_name">
 
@@ -48,47 +74,57 @@
 </div>
 
 
-<!-- // current person logged in -->
+<!--
 	    <h2><%= current_user.email %>'s Ships Feed</h2>
 
 	    <% current_user.ships.each do |ship|%>
 
-<!-- //this is all of users ships -->
+
 	      <div id="allships">
 	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %>
 	          </h4>
 	          <p>Location:<%= ship.veh_location%></p>
 	          <p>Number of seats: <%= ship.seats%></p>
 
-						<div id="delete_button">
-	          		<form class="" action="/ships/<%= ship.id%>" method="DELETE">
-	                 <input type="submit" name="" value="Delete ship">
-	          		</form>
-						</div>
-
-						<div id="edit_button">
-	          		<button onclick="location.href='/ships/<%= ship.id %>/edit'" id="edit">Edit Ship</button>
-						</div>
-
 	      </div>
 
 	    <% end %>
 
-<!--
-//form to create a ship on the "user profile homepage"
-//this form will pop up as a modal on user profile page -->
+
+
+	<form class="" action="/ships" method="POST">
+<p>Name of Ship</p>
+	    <input type="text" name="[create]veh_name">
+		<p>Vehicle Location</p>
+
+	    <select name="[create]veh_location">
+	        <option value="Venus">Venus</option>
+	        <option value="Earth">Earth</option>
+	        <option value="Moon">Moon</option>
+	        <option value="Mars">Mars</option>
+	        <option value="Ceres">Ceres</option>
+	    </select>
+	<p>Number of Seats</p>
+	    <select name="[create]seats">
+	        <option value="6">6</option>
+	        <option value="10">10</option>
+	        <option value="12">12</option>
+	    </select>
+<p>Upload an image of your ship</p>
+			<input type="file" name="user[avatar]" id="user_avatar">
+
+<br>
+	    <input type="submit" name="" value="submit">
+	</form>
 
 
 
-
-	<!-- this is the feed for your trips  -->
-	<!-- //current person logged in -->
 	<% if @current_user %>
 	    <h2><%= @current_user.fname %>'s Trips Feed</h2>
 
 	    <h2><% @current_user.trip.each do |trip|%></h2>
 
-	<!-- //all of the users trips -->
+
 	      <div id="alltrips">
 	          <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
 	            <p>It is starting at <%= trip.origin%></p>
@@ -108,15 +144,15 @@
 	<% end %>
 
 
-	<!-- //form to create a trip for "trip feed" page -->
 
-	<form class="" action="/trips" method="post">
-	    <input type="hidden" name="_method" value="PUT">
-
+<h2>Create a trip</h2>
+	<form class="" action="/trips" method="POST">
+		<p>Ship Description</p>
 	    <select name="[create]description">
 	        <option value="passenger">passenger</option>
 	        <option value="freight">freight</option>
 	    </select>
+		<p>Trip Origin:</p>
 
 	    <select name="[create]origin">
 	        <option value="Venus">Venus</option>
@@ -125,6 +161,7 @@
 	        <option value="Mars">Mars</option>
 	        <option value="Ceres">Ceres</option>
 	    </select>
+		<p>Trip Description</p>
 
 	    <select name="[create]destination">
 	        <option value="Earth">Earth</option>
@@ -135,15 +172,24 @@
 	    </select>
 
 
-
+		<p>Number of Seats</p>
 	    <select name="[create]seats">
-	        <option value="6">6</option>
-	        <option value="10">10</option>
-	        <option value="12">12</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
 	    </select>
 
 	    <input type="submit" name="" value="submit">
-	</form>
+	</form> -->
 
 </body>
 </html>

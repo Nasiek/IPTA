@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   def index
       @trip = Trip.all
+      @user = User.all 
   end
 
   def show
@@ -28,10 +29,10 @@ class TripsController < ApplicationController
   def delete
   end
 
-  def edit 
+  def edit
   end
 
-private 
+private
 def trip_params
 params.require(:trip).permit(:description, :destination, :origin, :seats)
   end
