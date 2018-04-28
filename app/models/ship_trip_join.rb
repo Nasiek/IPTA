@@ -1,4 +1,4 @@
 class ShipTripJoin < ApplicationRecord
-	belongs_to :trips
-  belongs_to :ships
+	belongs_to :trip
+  belongs_to :ship
 end

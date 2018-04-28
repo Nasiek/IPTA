@@ -32,56 +32,15 @@
 
 	</div>
 
-	<div id="newShip_div"></div>
-
-<!--
-<div id="newShip_div">
-
-	<h2 id="ship_header">New Ship</h2>
-
-	<form class="" action="/ships" method="POST">
-
-	<p id="name_p">Name:</p>
-	<input type="text" name="[create]veh_name">
-
-	<div id="location_div">
-		<p id="location_p">Location:</p>
-		<select name="[create]veh_location">
-			<option value="Venus">Venus</option>
-			<option value="Earth">Earth</option>
-			<option value="Moon">Moon</option>
-			<option value="Mars">Mars</option>
-			<option value="Ceres">Ceres</option>
-		</select>
-	</div>
-
-	<div id="seat_div">
-		<p id="name_p">Seats:</p>
-		<select name="[create]seats">
-			<option value="6">6</option>
-			<option value="10">10</option>
-			<option value="12">12</option>
-		</select>
-	</div>
-
-	<div id="upload_div">
-		<p id="name_p">Image:</p>
-		<input type="file" name="user[avatar]" id="user_avatar">
-	</div>
-
-	<input id="sumbit_button" type="submit" name="" value="submit">
-	</form>
-</div>
-
-
-<!--
-	    <h2><%= current_user.email %>'s Ships Feed</h2>
-
+<!-- // current person logged in -->
+	    <h2><%= current_user.fname %>'s Profile</h2><br>
+<h2>Your Ships </h2>
 	    <% current_user.ships.each do |ship|%>
 
 
 	      <div id="allships">
-	          <h4>Ship Name: <%= link_to ship.veh_name, ship_personal_path(ship) %>
+	          <h4>Ship Name: <%= link_to ship.veh_name, ship_path(ship) %>
+
 	          </h4>
 	          <p>Location:<%= ship.veh_location%></p>
 	          <p>Number of seats: <%= ship.seats%></p>
@@ -89,6 +48,27 @@
 	      </div>
 
 	    <% end %>
+<h2>
+Your Trips
+</h2>
+<!-- User's Trips -->
+
+<% current_user.trips.each do |trip|%>
+
+<!-- //this is all of users ships -->
+	      <div id="alltrips">
+	          <h4>Trip Description/Type: <%= link_to trip.description, trips_path(trip) %>
+
+	          </h4>
+	          <p>Cost: <%= trip.cost%></p>
+	          <p>Number of Seats: <%= trip.seats%></p>
+
+	      </div>
+
+	    <% end %>
+
+
+
 
 
 
