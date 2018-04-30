@@ -64,6 +64,13 @@
 	font-size: 50px;
 }*/
 /*Start Links*/
+canvas
+{
+	position: absolute;
+	top: 100px;
+	left: 8px;
+	background: transparent;
+}
 #footer_div a:link
 {
   color: #887bb3;
@@ -170,15 +177,6 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-#newShip_div
-{
-  height: 300px;
-  width: 400px;
-  opacity: .5;
-  background-color: lightblue;
-  border-radius: 50px;
-  font-family: 'Cinzel Decorative', cursive;
-}
 /*End Pop-Ups*/
 
 /*Start Divs*/
@@ -186,7 +184,7 @@
 {
   height: 80px;
   width: 125px;
-  top: 485px;
+  top: 565px;
   left: 275px;
   position: absolute;
   background-color: #8E8A9A;
@@ -196,7 +194,7 @@
 {
   height: 80px;
   width: 125px;
-  top: 485px;
+  top: 565px;
   left: 875px;
   position: absolute;
   background-color: #8E8A9A;
@@ -243,6 +241,15 @@
   height: 100px;
 	width: 1325px;
   top: 700px;
+  left: 8px;
+	position: absolute;
+}
+#footer_div3
+{
+  background-color: #15093A;
+  height: 100px;
+	width: 1325px;
+  top: 650px;
   left: 8px;
 	position: absolute;
 }
@@ -304,11 +311,26 @@
   height: 250px;
   width: 300px;
   background-color: #413175;
-  top: 175px;
+  top: 255px;
   left: 787.5px;
 	position: absolute;
-  opacity: .75;
+  opacity: .7;
   border-radius: 50px;
+  font-family: 'Cinzel Decorative', cursive;
+  visibility: hidden;
+}
+#newTrip_div
+{
+  height: 250px;
+  width: 300px;
+  background-color: #413175;
+  top: 255px;
+  left: 787.5px;
+	position: absolute;
+  opacity: .7;
+  border-radius: 50px;
+  font-family: 'Cinzel Decorative', cursive;
+  visibility: hidden;
 }
 #offer_div
 {
@@ -324,7 +346,7 @@
   background: radial-gradient(#887bb3 60%, #413175  90%, #15093A  120%);
   height: 550px;
 	width: 1000px;
-  top: 17.5px;
+  top: 100px;
   left: 162.5px;
   opacity: .3;
 	position: absolute;
@@ -360,11 +382,41 @@
   height: 250px;
   width: 300px;
   background-color: #413175;
-  top: 175px;
+  top: 255px;
   left: 187.5px;
 	position: absolute;
   opacity: .75;
   border-radius: 50px;
+}
+#viewShips_div
+{
+  height: 250px;
+  width: 300px;
+  background-color: #413175;
+  top: 255px;
+  left: 787.5px;
+	position: absolute;
+  opacity: .7;
+  border-radius: 50px;
+  font-family: 'Cinzel Decorative', cursive;
+  overflow: auto;
+  text-align: center;
+  visibility: hidden;
+}
+#viewTrips_div
+{
+  height: 250px;
+  width: 300px;
+  background-color: #413175;
+  top: 255px;
+  left: 787.5px;
+	position: absolute;
+  opacity: .5;
+  border-radius: 50px;
+  font-family: 'Cinzel Decorative', cursive;
+  overflow: auto;
+  text-align: center;
+  visibility: hidden;
 }
 /*End Divs*/
 
@@ -413,6 +465,24 @@
   left: 50px;
   position:absolute;
 }
+#newShip_h3
+{
+  color: #FBFBFB;
+  font-size: 16px;
+  text-shadow: 0px 0px 5px #020008;
+  top: 0px;
+  left: 77.525px;
+  position:absolute;
+}
+#newTrip_h3
+{
+  color: #FBFBFB;
+  font-size: 16px;
+  text-shadow: 0px 0px 5px #020008;
+  top: 0px;
+  left: 78.395px;
+  position:absolute;
+}
 #offer_h2
 {
   font-family: 'Cinzel Decorative', cursive;
@@ -459,6 +529,13 @@
   left: 1020px;
   position: absolute;
 }
+#screen_h2
+{
+  color: #FBFBFB;
+  font-size: 24px;
+  text-shadow: 0px 0px 20px #020008;
+  text-align: center;
+}
 #signin_h2
 {
   font-family: 'Cinzel Decorative', cursive;
@@ -476,6 +553,54 @@
   top: 0px;
   left: 60.97px;
   position: absolute;
+}
+#viewCost_h4
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewName_h4
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewLocation_h4
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewSeats_h4
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewSeats2_h4
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewShips_h2
+{
+  color: #FBFBFB;
+  font-size: 16px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewTrips_h2
+{
+  color: #FBFBFB;
+  font-size: 16px;
+  text-shadow: 0px 0px 5px #020008;
+}
+#viewType_h4
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
 }
 /*End headers*/
 
@@ -650,6 +775,15 @@
   left: 1020px;
   position:absolute;
 }
+#shipSeats_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+  top: 65px;
+  left: 204.96px;
+  position:absolute;
+}
 #service_p
 {
   font-family: 'Cinzel Decorative', cursive;
@@ -657,6 +791,24 @@
   text-shadow: 0px 0px 25px #020008;
   top: 20px;
   left: 1060px;
+  position:absolute;
+}
+#shipLocation_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+  top: 65px;
+  left: 38.205px;
+  position:absolute;
+}
+#shipName_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #020008;
+  top: 31px;
+  left: 15px;
   position:absolute;
 }
 #street_p
@@ -667,6 +819,42 @@
   text-shadow: 0px 0px 25px #020008;
   top: 95px;
   left: 950px;
+  position:absolute;
+}
+#tripDescription_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  top: 40px;
+  left: 2.275px;
+  text-shadow: 0px 0px 5px #020008;
+  position:absolute;
+}
+#tripFrom_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  top: 40px;
+  left: 129.17px;
+  text-shadow: 0px 0px 5px #020008;
+  position:absolute;
+}
+#tripSeats_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  top: 105px;
+  left: 86.385px;
+  text-shadow: 0px 0px 5px #020008;
+  position:absolute;
+}
+#tripTo_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  top: 40px;
+  left: 239.905px;
+  text-shadow: 0px 0px 5px #020008;
   position:absolute;
 }
 #tube_p
@@ -689,6 +877,15 @@
   left: 520px;
   position:absolute;
 }
+#upload_p
+{
+  color: #FBFBFB;
+  font-size: 14px;
+  text-shadow: 0px 0px 25px #020008;
+  top: 125px;
+  left: 95.56px;
+  position:absolute;
+}
 /*End P's*/
 
 /*Start Images*/
@@ -700,19 +897,19 @@
 }
 #background_pic
 {
-  top: 17.5px;
+  top: 100px;
   left: 162.5px;
   position: absolute;
 }
 #hologram_pic
 {
-  top: 320px;
+  top: 400px;
   left: 275px;
   position: absolute;
 }
 #hologram_pic2
 {
-  top: 320px;
+  top: 400px;
   left: 875px;
   position: absolute;
 }
@@ -727,6 +924,22 @@
   top: -16px;
   position: absolute;
   opacity: .85;
+}
+#newShip_pic
+{
+  top: 255px;
+  left: 787.5px;
+  position: absolute;
+  border-radius: 50px;
+  visibility: hidden;
+}
+#newTrip_pic
+{
+  top: 255px;
+  left: 787.5px;
+  position: absolute;
+  border-radius: 50px;
+  visibility: hidden;
 }
 #offer_pic
 {
@@ -764,7 +977,7 @@
 }
 #texture_pic
 {
-  top: 485px;
+  top: 565px;
   left: 275px;
   position: absolute;
   border-radius: 50px 50px 15px 15px;
@@ -772,15 +985,79 @@
 }
 #texture_pic2
 {
-  top: 485px;
+  top: 565px;
   left: 875px;
   position: absolute;
   border-radius: 50px 50px 15px 15px;
   opacity: .75;
 }
+#viewShip_pic
+{
+  top: 255px;
+  left: 787.5px;
+  position: absolute;
+  border-radius: 50px;
+  visibility: hidden;
+}
+#viewTrip_pic
+{
+  top: 255px;
+  left: 787.5px;
+  position: absolute;
+  border-radius: 50px;
+  visibility: hidden;
+}
 /*End Images*/
 
 /*Start Buttons*/
+#edit_button
+{
+  box-shadow: 0px 0px 10px #15093A;
+  top: 175px;
+  left: 38.47px;
+  position:absolute;
+}
+#logout_button
+{
+  box-shadow: 0px 0px 10px #15093A;
+  top: 175px;
+  left: 187.475px;
+  position:absolute;
+}
+#newShip_button
+{
+  box-shadow: 0px 0px 10px #15093A;
+  top: 75px;
+  left: 38.47px;
+  position:absolute;
+}
+#newTrip_button
+{
+  box-shadow: 0px 0px 10px #15093A;
+  top: 125px;
+  left: 38.47px;
+  position:absolute;
+}
+#viewTrip_button
+{
+  box-shadow: 0px 0px 10px #15093A;
+  top: 125px;
+  left: 187.475px;
+  position:absolute;
+}
+#viewShip_button
+{
+  box-shadow: 0px 0px 10px #15093A;
+  top: 75px;
+  left: 187.475px;
+  position:absolute;
+}
+#shipsSumbit_button
+{
+  top: 215px;
+  left: 121.5px;
+  position:absolute;
+}
 #signin_button
 {
   box-shadow: 0px 0px 20px #15093A;
@@ -805,7 +1082,67 @@
   left: 69.39px;
   position:absolute;
 }
+#tripsSumbit_button
+{
+  top: 200px;
+  left: 125px;
+  position:absolute;
+}
+#upload_button
+{
+  top: 165px;
+  left: 60px;
+  position:absolute;
+}
 /*End Buttons*/
+
+/*Start Text-Box*/
+#shipName
+{
+  top: 45px;
+  left: 63.5px;
+  position: absolute;
+}
+/*End Text-Box*/
+
+/*Start Drop-Box*/
+#shipLocation
+{
+  top: 100px;
+  left: 43.5px;
+  position: absolute;
+}
+#shipSeats
+{
+  top: 100px;
+  left: 205.5px;
+  position: absolute;
+}
+#tripDescription
+{
+  top: 75px;
+  left: 6px;
+  position: absolute;
+}
+#tripFrom
+{
+  top: 75px;
+  left: 118.5px;
+  position: absolute;
+}
+#tripTo
+{
+  top: 75px;
+  left: 215px;
+  position: absolute;
+}
+#tripSeats
+{
+  top: 140px;
+  left: 130px;
+  position: absolute;
+}
+/*End Drop-Box*/
 
 /*Start Design*/
 #footer1_design

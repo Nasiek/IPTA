@@ -6,8 +6,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
 
 </head>
-<body>
+<body onload="init()">
+	<canvas id="background" width="1325" height="650"></canvas>
 	<h1>Welcome, <%= current_user.email %></h1>
+	 <h2><%= current_user.fname %>'s Profile</h2>
 
 	<img id="background_pic" src="/assets/background.jpg" style= "width:1000px; height:550px;">
 	<div id="overlay_div"></div>
@@ -21,155 +23,123 @@
 
 	<img id="texture_pic" src="/assets/texture.jpg" style= "width:125px; height:80px;">
 	<img id="texture_pic2" src="/assets/texture.jpg" style= "width:125px; height:80px;">
+
 	<div id="screen_div">
-		<p>New Ship</p>
-		<p>View Ship</p>
-		<p>New Trip</p>
-		<p>View Trip</p>
-		<p>Edit Profile</p>
-		<p><%= link_to 'See You!', destroy_user_session_path, method: :delete,class: 'logout'%></p>
-
-
+		<h2 id="screen_h2">Mission Control</h2>
+		<button id="newShip_button" onclick="hologram.newShip()">New Ship</button>
+		<button id="viewShip_button" onclick="hologram.viewShip()">View Ship</button>
+		<button id="newTrip_button" onclick="hologram.newTrip()">New Trip</button>
+		<button id="viewTrip_button" onclick="hologram.viewTrip()">View Trip</button>
+		<button id="edit_button">Edit Profile</button>
+		<button id="logout_button"><%= link_to 'Log Out', destroy_user_session_path, method: :delete,class: 'logout'%></button>
 	</div>
 
-<!-- // current person logged in -->
-	    <h2><%= current_user.fname %>'s Profile</h2><br>
-<h2>Your Ships </h2>
-	    <% current_user.ships.each do |ship|%>
-
-
-	      <div id="allships">
-	          <h4>Ship Name: <%= link_to ship.veh_name, ship_path(ship) %>
-
-	          </h4>
-	          <p>Location:<%= ship.veh_location%></p>
-	          <p>Number of seats: <%= ship.seats%></p>
-
-	      </div>
-
-	    <% end %>
-<h2>
-Your Trips
-</h2>
-<!-- User's Trips -->
-
-<% current_user.trips.each do |trip|%>
-
-<!-- //this is all of users ships -->
-	      <div id="alltrips">
-	          <h4>Trip Description/Type: <%= link_to trip.description, trips_path(trip) %>
-
-	          </h4>
-	          <p>Cost: <%= trip.cost%></p>
-	          <p>Number of Seats: <%= trip.seats%></p>
-
-	      </div>
-
-	    <% end %>
+	<img id="newShip_pic" src="/assets/newShip.jpg" style= "width:300px; height:250px;">
+	<div id="newShip_div">
+		<form class="" action="/ships" method="POST">
+			<h3 id="newShip_h3">Create New Ship</h3>
+			<p id="shipName_p">Name:</p>
+		  <input id="shipName" type="text" name="[create]veh_name">
+			<p id="shipLocation_p">Location</p>
+			<select id="shipLocation" name="[create]veh_location">
+		  	<option value="Venus">Venus</option>
+		    <option value="Earth">Earth</option>
+		    <option value="Moon">Moon</option>
+		    <option value="Mars">Mars</option>
+		    <option value="Ceres">Ceres</option>
+		  </select>
+			<p id="shipSeats_p">Seats</p>
+		  <select id="shipSeats" name="[create]seats">
+		  	<option value="6">6</option>
+		    <option value="10">10</option>
+		    <option value="12">12</option>
+		  </select>
+			<p id="upload_p">Upload Ship Image</p>
+			<input id="upload_button" type="file" name="user[avatar]" id="user_avatar">
+		  <input id="shipsSumbit_button" type="submit" name="" value="submit">
+		</form>
+	</div>
 
 
 
+	<img id="newTrip_pic" src="/assets/newTrip.jpg" style= "width:300px; height:250px;">
+	<div id="newTrip_div">
+		<form class="" action="/trips" method="POST">
+			<h3 id="newTrip_h3">Create New Trip</h3>
+			<p id="tripDescription_p">Description</p>
+		    <select id="tripDescription" name="[create]description">
+		    	<option value="passenger">passenger</option>
+		      <option value="freight">freight</option>
+		    </select>
+				<p id="tripFrom_p">From</p>
+					<select id="tripFrom" name="[create]origin">
+			    	<option value="Venus">Venus</option>
+			      <option value="Earth">Earth</option>
+			      <option value="Moon">Moon</option>
+			      <option value="Mars">Mars</option>
+			      <option value="Ceres">Ceres</option>
+			    </select>
+				<p id="tripTo_p">To</p>
+					<select id="tripTo" name="[create]destination">
+				  	<option value="Earth">Earth</option>
+				    <option value="Moon">Moon</option>
+				    <option value="Mars">Mars</option>
+				    <option value="Ceres">Ceres</option>
+				    <option value="Europa">Europa</option>
+				  </select>
+				<p id="tripSeats_p">Number of Seats</p>
+					<select id="tripSeats" name="[create]seats">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+				  </select>
+				<input id="tripsSumbit_button" type="submit" name="" value="submit">
+			</form>
+		</div>
+
+		<img id="viewShip_pic" src="/assets/viewships.png" style= "width:300px; height:250px;">
+	<div id="viewShips_div">
+		<h2 id="viewShips_h2">Your Ships</h2>
+	  <% current_user.ships.each do |ship|%>
+			<h4 id="viewName_h4">Name: <%= link_to ship.veh_name, ship_path(ship) %></h4>
+	  	<h4 id="viewLocation_h4">Location: <%= ship.veh_location%></h4>
+	  	<h4 id="viewSeats_h4">Seats: <%= ship.seats%></h4>
+		<% end %>
+	</div>
+
+	<img id="viewTrip_pic" src="/assets/viewtrips.png" style= "width:300px; height:250px;">
+	<div id="viewTrips_div">
+		<h2 id="viewTrips_h2">Your Trips</h2>
+		<% current_user.trips.each do |trip|%>
+	  	<h4 id="viewType_h4">Type: <%= link_to trip.description, trips_path(trip) %></h4>
+	  	<h4 id="viewCost_h4">Cost: <%= trip.cost%></h4>
+	    <h4 id="viewSeats2_h4">Seats: <%= trip.seats%></h4>
+		<% end %>
+	 </div>
+
+	 <!--Start footer-->
+	 <div id="footer_div3">
+	 	<h3 id="follow_h3">Follow ISTA</h3>
+	 	<div id="footer1_design"></div>
+	 	<p id="twitter_p"><a href ="https://twitter.com/NASA">Twitter</a></p>
+	 	<p id="tube_p"><a href ="https://www.youtube.com/user/NASAtelevision/about">Youtube</a></p>
+	 	<p id="gram_p"><a href ="https://www.instagram.com/nasa/?hl=en">Instagram</a></p>
+	 	<p id="corp_p">©2018 ISTA Corp.</p>
+	 </div>
+	 <!--End footer-->
 
 
 
-	<form class="" action="/ships" method="POST">
-<p>Name of Ship</p>
-	    <input type="text" name="[create]veh_name">
-		<p>Vehicle Location</p>
 
-	    <select name="[create]veh_location">
-	        <option value="Venus">Venus</option>
-	        <option value="Earth">Earth</option>
-	        <option value="Moon">Moon</option>
-	        <option value="Mars">Mars</option>
-	        <option value="Ceres">Ceres</option>
-	    </select>
-	<p>Number of Seats</p>
-	    <select name="[create]seats">
-	        <option value="6">6</option>
-	        <option value="10">10</option>
-	        <option value="12">12</option>
-	    </select>
-<p>Upload an image of your ship</p>
-			<input type="file" name="user[avatar]" id="user_avatar">
-
-<br>
-	    <input type="submit" name="" value="submit">
-	</form>
-
-
-
-	<% if @current_user %>
-	    <h2><%= @current_user.fname %>'s Trips Feed</h2>
-
-	    <h2><% @current_user.trip.each do |trip|%></h2>
-
-
-	      <div id="alltrips">
-	          <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
-	            <p>It is starting at <%= trip.origin%></p>
-	            <p>And going to <%= trip.destination%></p>
-	            <p>Total distance: <%= trip.distance%> million miles.</p>
-	            <p><%= trip.seats%> seats</p>
-	            <p>Total cost: <%= trip.cost%></p>
-
-	          <form class="" action="/trips/<%= trip.id%>" method="DELETE">
-	                 <input type="submit" name="" value="Delete trips">
-	          </form>
-	          <button onclick="location.href='/trips/<%= trip.id %>'" id="edit">Edit Trip</button>
-
-	      </div>
-
-	    <% end %>
-	<% end %>
-
-
-
-<h2>Create a trip</h2>
-	<form class="" action="/trips" method="POST">
-		<p>Ship Description</p>
-	    <select name="[create]description">
-	        <option value="passenger">passenger</option>
-	        <option value="freight">freight</option>
-	    </select>
-		<p>Trip Origin:</p>
-
-	    <select name="[create]origin">
-	        <option value="Venus">Venus</option>
-	        <option value="Earth">Earth</option>
-	        <option value="Moon">Moon</option>
-	        <option value="Mars">Mars</option>
-	        <option value="Ceres">Ceres</option>
-	    </select>
-		<p>Trip Description</p>
-
-	    <select name="[create]destination">
-	        <option value="Earth">Earth</option>
-	        <option value="Moon">Moon</option>
-	        <option value="Mars">Mars</option>
-	        <option value="Ceres">Ceres</option>
-	        <option value="Europa">Europa</option>
-	    </select>
-
-
-		<p>Number of Seats</p>
-	    <select name="[create]seats">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
-	    </select>
-
-	    <input type="submit" name="" value="submit">
-	</form> -->
 
 </body>
 </html>
