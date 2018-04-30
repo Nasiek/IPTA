@@ -22,6 +22,12 @@ end
       @trip = Trip.find(params[:format])
   end
 
+def update
+@trip = Trip.find(params[:id])
+@tripupdate = @trip.update(update_params)
+
+redirect_to trip_path(@trip)
+end
 
   def create
     @trip = Trip.new(trip_params)
@@ -51,7 +57,9 @@ private
 def trip_params
 params.require(:create).permit(:description, :destination, :origin, :seats)
   end
-
+def trip_params
+params.require(:update).permit(:description, :destination, :origin, :seats)
+  end
 
 
 end
