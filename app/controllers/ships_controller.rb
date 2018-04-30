@@ -37,10 +37,12 @@ def update
 redirect_to ship_path(@ship)
 end
 
-  def delete
+  def destroy
   @ship_delete = Ship.find(params[:id])
-    @ship_delete.destroy
-    redirect_to "/users/home"
+    @ship_delete.delete
+    if @ship_delete.delete 
+      redirect_to "/users/home"
+    end 
   end
 
 private

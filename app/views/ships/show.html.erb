@@ -12,7 +12,11 @@
           <p>Number of seats: <%= @ship.seats%> </p>
 
 	<p>Lasted Edited:<%= @ship.updated_at.strftime("%B %d, %Y") %> </p>
-
+<div id="delete_button">
+              <form  action="/ships/<%= @ship.id%>" method="DELETE">
+                 <input type="submit" name="" value="Delete ship">
+              </form>
+          </div>
 	<h2>Related Trip Info</h2>
 	<% if @ship.trips && @ship.trips.length > 0 %>
  <%	 @ship.trips.each do |shiptrip| %>
@@ -30,6 +34,9 @@
  <p>You have no trips. Want to add a trip?</p>
  <% end %>
 
+
+
+          
 
 
 

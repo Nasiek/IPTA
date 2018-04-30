@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Trip Feed</title>
+    <meta charset="UTF-8">
+    <title>Trip Feed</title>
 </head>
-<body style="background-image: url:"">
+
+<body style="background-image: url:" ">
  
 
 <h1>Check out all the Journey's happening!</h1>
 
-<div class="nav">
+<div class="nav ">
  
-<h4><li>  <%= link_to "See All Ships", "/ships/feed" %></li>
-<li><%= link_to "All Trips", "/trips/feed" %> </li>
-<li><%= link_to "Your Profile", "/users/home" %></li>
-<li><%= link_to "Edit this Ship", ships_edit_path(@ship) %></li>
+<h4><li>  <%= link_to "See All Ships ", "/ships/feed " %></li>
+<li><%= link_to "Your Profile ", "/users/home " %></li>
+
 </h4>
 </div>
 <!-- //all of the users trips -->
 
 
-  <div id="alltrips">
+  <div id="alltrips ">
       <h4><% @trip.each do |trip| %></h4>
-      <a href="/" style="text-decoration: none #2E4053 "><div id="alltrips" style="background-color:lightblue">
-      <p>
-        Trip Passenger Type: <%= trip.description %>
+        <div id="alltrips " style="background-color:lightblue ">
+        <p>
+            Trip Passenger Type:
+            <%= trip.description %>
         </p>
-        <p>Booked By: <%= trip.user.fname %> <%= trip.user.lname %> 
-
+        <p>Booked By:
+            <%= trip.user.fname %>
+                <%= trip.user.lname %>
         </p>
-      <p>
-        Trip Origin Location: <%= trip.origin%>
-
-      </p>
-      <p>Trip Final Destination: <%= trip.destination%>
-
-      </p>
-      <p>Total distance: <%= trip.distance%> million miles.</p>
-      <p>Number of seats booked:  <%= trip.seats%></p>
-      <p>Total cost: $<%= trip.cost%>.00</p>
-      <p>Last Updated: <%=trip.updated_at.strftime("%B %d, %Y") %> </p>
-      <br>
-</div>
-  </div>
-</a>
-
-    <% end %>
- 
+        <p>
+            Trip Origin Location:
+            <%= trip.origin%>
+        </p>
+        <p>Trip Final Destination:
+            <%= trip.destination%>
+        </p>
+        <p>Total distance:
+            <%= trip.distance%> million miles.</p>
+        <p>Number of seats booked:
+            <%= trip.seats%>
+        </p>
+        <p>Total cost: $
+            <%= trip.cost%>.00</p>
+        <p>Last Updated:
+            <%=trip.updated_at.strftime("%B %d, %Y") %>
+        </p>
+        <br>
+        <%= link_to "See Full Trip Itinerary", trip_personal_path(trip) %>
+        </div>
+        </div>
+        <% end %>
 </body>
+
 </html>

@@ -13,10 +13,13 @@ class TripsController < ApplicationController
   def show
       @trip = Trip.find(params[:id])
   end
-
+def personal
+@trip = Trip.find(params[:id])
+end
 
   def edit
-      @user = User.find(params[:id])
+      @user = current_user
+      @trip = Trip.find(params[:format])
   end
 
 
