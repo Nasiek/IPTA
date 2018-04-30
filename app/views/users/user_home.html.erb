@@ -156,7 +156,20 @@ Your Trips
 					<option value="12">12</option>
 	    </select>
 
+			<p>Choose a ship</p>
+			<%= collection_select(:ship, :ship_id, Ship.all, :id, :veh_name) %>
+			<br>
+
+
+
+
+
 	    <input type="submit" name="" value="submit">
+
+
+
+
+
 	</form>
 
 </body>
