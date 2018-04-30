@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Trip Feed</title>
 </head>
+<<<<<<< HEAD
 
 <body style="background-image: url:" ">
  
@@ -16,6 +17,19 @@
 <h4><li>  <%= link_to "See All Ships ", "/ships/feed " %></li>
 <li><%= link_to "Your Profile ", "/users/home " %></li>
 
+=======
+<body style="background-image: url:">
+
+
+<h1>Check out all the Journey's happening!</h1>
+
+<div class="nav">
+
+<h4><li>  <%= link_to "See All Ships", "/ships/feed" %></li>
+<li><%= link_to "All Trips", "/trips/feed" %> </li>
+<li><%= link_to "Your Profile", "/users/home" %></li>
+<li><%= link_to "Edit this Ship", ships_edit_path(@ship) %></li>
+>>>>>>> b42d05d588724576bcf3cc6543b74725677894bc
 </h4>
 </div>
 <!-- //all of the users trips -->
@@ -28,6 +42,7 @@
             Trip Passenger Type:
             <%= trip.description %>
         </p>
+<<<<<<< HEAD
         <p>Booked By:
             <%= trip.user.fname %>
                 <%= trip.user.lname %>
@@ -54,6 +69,29 @@
         </div>
         </div>
         <% end %>
+=======
+        <p>Booked By: <%= trip.user.fname %> <%= trip.user.lname %>
+
+        </p>
+      <p>
+        Trip Origin Location: <%= trip.origin%>
+
+      </p>
+      <p>Trip Final Destination: <%= trip.destination%>
+
+      </p>
+      <p>Total distance: <%= trip.distance%> million miles.</p>
+      <p>Number of seats booked:  <%= trip.seats%></p>
+      <p>Total cost: $<%= trip.cost%>.00</p>
+      <p>Last Updated: <%=trip.updated_at.strftime("%B %d, %Y") %> </p>
+      <br>
+</div>
+  </div>
+</a>
+
+    <% end %>
+
+>>>>>>> b42d05d588724576bcf3cc6543b74725677894bc
 </body>
 
 </html>

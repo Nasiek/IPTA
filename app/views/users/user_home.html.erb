@@ -3,23 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>User Homepage</title>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+
 </head>
 <body>
-	<h1>Welcome, <%= current_user.fname %></h1>
-	<img src="/assets/projector.png" style ="width:400px; height:400px;">
-	<div id="screen_div"></div>
-	<div id="sidebar_div"></div>
-	<div id="topbar_div"></div>
-	<div id="bottombar_div"></div>
-	<p></p>
+	<h1>Welcome, <%= current_user.email %></h1>
 
+	<img id="background_pic" src="/assets/background.jpg" style= "width:1000px; height:550px;">
+	<div id="overlay_div"></div>
+
+	<img id="hologram_pic" src="/assets/projector.png" style= "width:125px; height:250px;">
+
+	<img id="hologram_pic2" src="/assets/projector.png" style= "width:125px; height:250px;">
+
+	<div id="base_div"></div>
+	<div id="base_div2"></div>
+
+	<img id="texture_pic" src="/assets/texture.jpg" style= "width:125px; height:80px;">
+	<img id="texture_pic2" src="/assets/texture.jpg" style= "width:125px; height:80px;">
+	<div id="screen_div">
+		<p>New Ship</p>
+		<p>View Ship</p>
+		<p>New Trip</p>
+		<p>View Trip</p>
+		<p>Edit Profile</p>
+		<p><%= link_to 'See You!', destroy_user_session_path, method: :delete,class: 'logout'%></p>
+
+
+	</div>
 
 <!-- // current person logged in -->
 	    <h2><%= current_user.fname %>'s Profile</h2><br>
 <h2>Your Ships </h2>
 	    <% current_user.ships.each do |ship|%>
 
-<!-- //this is all of users ships -->
+
 	      <div id="allships">
 	          <h4>Ship Name: <%= link_to ship.veh_name, ship_path(ship) %>
 
@@ -52,11 +70,7 @@ Your Trips
 
 
 
-<!--
-//form to create a ship on the "user profile homepage"
-//this form will pop up as a modal on user profile page -->
 
-	<h2>Create a ship</h2>
 
 	<form class="" action="/ships" method="POST">
 <p>Name of Ship</p>
@@ -84,14 +98,13 @@ Your Trips
 	</form>
 
 
-	<!-- this is the feed for your trips  -->
-	<!-- //current person logged in -->
+
 	<% if @current_user %>
 	    <h2><%= @current_user.fname %>'s Trips Feed</h2>
 
 	    <h2><% @current_user.trip.each do |trip|%></h2>
 
-	<!-- //all of the users trips -->
+
 	      <div id="alltrips">
 	          <p><%= @current_user.fname %> is transporting <%= trip.driscription%></p>
 	            <p>It is starting at <%= trip.origin%></p>
@@ -103,7 +116,6 @@ Your Trips
 	          <form class="" action="/trips/<%= trip.id%>" method="DELETE">
 	                 <input type="submit" name="" value="Delete trips">
 	          </form>
-<br>
 	          <button onclick="location.href='/trips/<%= trip.id %>'" id="edit">Edit Trip</button>
 
 	      </div>
@@ -112,7 +124,7 @@ Your Trips
 	<% end %>
 
 
-	<!-- //form to create a trip for "trip feed" page -->
+
 <h2>Create a trip</h2>
 	<form class="" action="/trips" method="POST">
 		<p>Ship Description</p>
@@ -157,7 +169,7 @@ Your Trips
 	    </select>
 
 	    <input type="submit" name="" value="submit">
-	</form>
+	</form> -->
 
 </body>
 </html>
