@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Trip Feed</title>
 </head>
+<<<<<<< HEAD
 
 <body style="background-image: url:" ">
  
@@ -27,7 +28,7 @@
             Trip Passenger Type:
             <%= trip.description %>
         </p>
-
+<<<<<<< HEAD
         <p>Booked By:
             <%= trip.user.fname %>
                 <%= trip.user.lname %>
@@ -54,6 +55,7 @@
         </div>
         </div>
         <% end %>
+
 </body>
 
 </html>
