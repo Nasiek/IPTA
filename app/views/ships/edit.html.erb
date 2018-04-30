@@ -25,7 +25,13 @@
     </select>
 
     <input type="file" name="[update]avatar" id="ship_avatar">
-  <p>Your Ship: <%= image_tag @ship.avatar.url, class: "shipPic" %></p>
+  <p>Your Ship: </p>
+
+  <% if @ship.avatar.url == nil%>
+    <%= image_tag "/images/elon.jpg" %>
+    <% else %>
+    <%= image_tag @ship.avatar.url %>
+<% end %>
 
 <!-- //subit button that attaches it to current user id -->
     
