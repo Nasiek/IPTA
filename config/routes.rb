@@ -7,10 +7,10 @@ Rails.application.routes.draw do
 
   get 'ships/feed', to: 'ships#index'
   get 'ships/personal/:id', to: 'ships#personal', as: 'ship_personal'
-  get 'trips/feed', to: 'trips#index', as: 'trip_personal'
-  get 'trips/personal/:id', to: 'trips#show'
+  get 'trips/feed', to: 'trips#index'
+  get 'trips/personal/:id', to: 'trips#show', as: 'trip_personal'
 
-resources :trips, except: [:index,:show]
+resources :trips, except: [:index]
 
 resources :ships, except: [:index]
 

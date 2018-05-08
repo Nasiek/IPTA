@@ -7,12 +7,24 @@
 <body>
 
 <p>Ship Name: <%= @ship.veh_name %></p>
+       
+
+<p>Your Ship: </p> <% if @ship.avatar.url == nil%>
+	<%= image_tag "/images/elon.jpg" %>
+	<% else %>
+	<%= image_tag @ship.avatar.url %>
+<% end %>
+
        <p>Ship's Location:<%= @ship.veh_location%></p>
 
           <p>Number of seats: <%= @ship.seats%> </p>
 
 	<p>Lasted Edited:<%= @ship.updated_at.strftime("%B %d, %Y") %> </p>
-
+<div id="delete_button">
+              <form  action="/ships/<%= @ship.id%>" method="DELETE">
+                 <input type="submit" name="" value="Delete ship">
+              </form>
+          </div>
 	<h2>Related Trip Info</h2>
 	<% if @ship.trips && @ship.trips.length > 0 %>
  <%	 @ship.trips.each do |shiptrip| %>
@@ -30,6 +42,9 @@
  <p>You have no trips. Want to add a trip?</p>
  <% end %>
 
+
+
+          
 
 
 

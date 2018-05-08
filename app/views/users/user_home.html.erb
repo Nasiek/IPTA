@@ -101,6 +101,8 @@
 						<option value="10">10</option>
 						<option value="11">11</option>
 						<option value="12">12</option>
+						<p>Choose a ship</p>
+						<%= collection_select(:ship, :ship_id, Ship.all, :id, :veh_name) %>
 				  </select>
 				<input id="tripsSumbit_button" type="submit" name="" value="submit">
 			</form>

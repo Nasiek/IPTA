@@ -1,19 +1,17 @@
-<h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
 
-
+<h1>Update your Trip Information</h1>
 <!-- //form to edit a trip -->
 
-<form class="" action="/trips_edit/<%=@user.id%>" method="post">
+<form class="" action="/trips/<%=@trip.id%>" method="PUT">
     <input type="hidden" name="_method" value="PUT">
-
+<h3>Update Cargo Type:</h3>
 <!-- //update description -->
     <select name="[update]description">
         <option value="passenger">passenger</option>
         <option value="freight">freight</option>
     </select>
 
-<!-- //drop down for origin and destination -->
+<!-- //drop down for origin and destination --><h3>Update Trip Origin</h3>
     <select name="[update]origin">
         <option value="Venus">Venus</option>
         <option value="Earth">Earth</option>
@@ -21,7 +19,7 @@
         <option value="Mars">Mars</option>
         <option value="Ceres">Ceres</option>
     </select>
-
+    <h3>Update Trip Destination</h3>
     <select name="[update]destination">
         <option value="Earth">Earth</option>
         <option value="Moon">Moon</option>
@@ -31,9 +29,9 @@
     </select>
 
 <!-- // put in distance output??? -->
-    <p>Total distance: <%= trip.distance%> million miles.</p>
+    <p>Current Total distance: <%= @trip.distance%> million miles.(final mileage will update after checkout)</p> 
 
-
+<h3>Update Seat Count:</h3>
     <select name="[update]seats">
         <option value="6">6</option>
         <option value="10">10</option>
@@ -41,7 +39,8 @@
     </select>
 
 <!-- // put in cost output??? -->
-    <p>Total cost: <%= trip.cost%></p>
+    <p>Total cost: $<%= @trip.cost%>.00 <em color:"green">(final price will be calculated after checkout)</em></p>
+
 
 <!-- //submit that attaches to user id -->
     <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">

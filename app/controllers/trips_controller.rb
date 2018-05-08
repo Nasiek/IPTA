@@ -13,12 +13,21 @@ class TripsController < ApplicationController
   def show
       @trip = Trip.find(params[:id])
   end
-
+def personal
+@trip = Trip.find(params[:id])
+end
 
   def edit
-      @user = User.find(params[:id])
+      @user = current_user
+      @trip = Trip.find(params[:format])
   end
 
+def update
+@trip = Trip.find(params[:id])
+@tripupdate = @trip.update(update_params)
+
+redirect_to trip_path(@trip)
+end
 
   def create
     @trip = Trip.new(trip_params)
@@ -46,9 +55,12 @@ class TripsController < ApplicationController
 
 private
 def trip_params
-params.require(:create).permit(:description, :destination, :origin, :seats)
+params.require(:create).permit(:description, :destination, :origin, :seats, :distance, :cost)
   end
 
+def update_params
+params.require(:update).permit(:description, :destination, :origin, :seats, :distance, :cost)
+  end
 
 
 end

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>Trip Feed</title>
 </head>
+<<<<<<< HEAD
 
-<body style=background-image: url: "">
+<body style="background-image: url:" ">
+ 
 
-
-
-<h1>Trips by IPTA</h1>
+<h1>Check out all the Journey's happening!</h1>
 
 <div class="nav ">
-
+ 
 <h4><li>  <%= link_to "See All Ships ", "/ships/feed " %></li>
 <li><%= link_to "Your Profile ", "/users/home " %></li>
 </h4>
@@ -28,7 +28,7 @@
             Trip Passenger Type:
             <%= trip.description %>
         </p>
-
+<<<<<<< HEAD
         <p>Booked By:
             <%= trip.user.fname %>
                 <%= trip.user.lname %>
@@ -55,6 +55,7 @@
         </div>
         </div>
         <% end %>
+
 </body>
 
 </html>

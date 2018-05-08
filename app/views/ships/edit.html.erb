@@ -1,5 +1,4 @@
-<h1>Ships#edit</h1>
-<p>Find me in app/views/ships/edit.html.erb</p>
+<h1>Update your Spaceship's Information</h1>
 
 <!--
 //form to edit a ship from "ship profile" page
@@ -26,6 +25,13 @@
     </select>
 
     <input type="file" name="[update]avatar" id="ship_avatar">
+  <p>Your Ship: </p>
+
+  <% if @ship.avatar.url == nil%>
+    <%= image_tag "/images/elon.jpg" %>
+    <% else %>
+    <%= image_tag @ship.avatar.url %>
+<% end %>
 
 <!-- //subit button that attaches it to current user id -->
     
@@ -35,6 +41,6 @@
 <!-- //delete ship -->
 <div id="delete_button">
     <form class="" action="/ships/<%= @ship.id%>" method="DELETE">
-       <input type="submit" name="<%= @ship.id%>" value="Delete ships">
+       <input type="submit" name="<%= @ship.id%>" value="Delete this ship">
     </form>
 </div>
