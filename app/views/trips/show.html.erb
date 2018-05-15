@@ -46,19 +46,21 @@
     </div>
     <h2>Current Trip Vehicle Info</h2>
     <% if @trip.ships && @trip.ships.length > 0 %>
-        <p>Number of Ships assigned to this Trip:  <%= trip.ships.length %></p>
+        <p>Number of Ships assigned to this Trip:  <%= @trip.ships.length %></p>
         <%  @trip.ships.each do |tripship| %>
             <p>Vehicle Name:
                 <%= tripship.veh_name %>
             </p>
             <p>Curent Ship Location:
-                <%= tripship.location %>
+                <%= tripship.veh_location %>
             </p>
             <p>Vehicle Capacity:
                 <%= tripship.seats %>
             </p>
             <p>Ship Picture:
+                <% if tripship.avatar.url %>
                 <%= image_tag tripship.avatar.url, class: "shipPic" %>
+                <% end %>
             </p>
 
             <p>Ship Owner: 
@@ -67,7 +69,13 @@
             <p>Contact owner for more info: <%= tripship.user.email %></p>
             <% end %>
                 <% else %>
-                    <p>This Trip has no ships. Let's fix that.</p>
+                   <p>Choose a ship</p>
+                       <%= form_for ShipTrip.new do |f| %>
+                       <%= collection_select(:ship_trip, :ship_id, Ship.all, :id, :veh_name) %>
+                       <%= hidden_field_tag '[ship_trip]trip_id', @trip.id%>
+                    <%=f.submit "Submit" %>
+                    <% end %>
+
                     <% end %>
                         <h4> <%= link_to "See All Ships", "/ships/feed" %> </h4>
                         <h4><%= link_to "Your Profile", "/users/home" %> </h4>

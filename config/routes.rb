@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get 'ships/personal/:id', to: 'ships#personal', as: 'ship_personal'
   get 'trips/feed', to: 'trips#index'
   get 'trips/personal/:id', to: 'trips#show', as: 'trip_personal'
-
+  post 'ship_trips', to: 'contracts#create'
+  delete 'ship_trips/:id', to: 'contracts#destroy'
 resources :trips, except: [:index]
-
 resources :ships, except: [:index]
 
 
