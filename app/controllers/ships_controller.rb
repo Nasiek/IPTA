@@ -1,4 +1,3 @@
-
 class ShipsController < ApplicationController
   before_action :authenticate_user!
 
@@ -11,7 +10,6 @@ class ShipsController < ApplicationController
 
   def create
       #s = Ship.new
-      #s.avatar = params[:file]
       #redirect_to users_home_path
       @ship = Ship.new(ship_params)
       @ship.user_id = current_user.id
@@ -36,15 +34,16 @@ class ShipsController < ApplicationController
 
 def update
 @ship = Ship.find(params[:id])
-@shipupdate = @ship.update(update_params)
+@ship.update(update_params)
+@ship.save
 
 redirect_to ship_path(@ship)
 end
 
   def destroy
   @ship_delete = Ship.find(params[:id])
-    @ship_delete.delete
-    if @ship_delete.delete
+    @ship_delete.destroy
+    if @ship_delete.destroy
       redirect_to "/users/home"
     end
   end

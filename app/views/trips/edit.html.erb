@@ -1,8 +1,11 @@
-
+<br>
+<br>
+<br>
+<br>
 <h1>Update your Trip Information</h1>
 <!-- //form to edit a trip -->
 
-<form class="" action="/trips/<%=@trip.id%>" method="PUT">
+<form class="" action="/trips/<%=@trip.id%>" method="POST">
     <input type="hidden" name="_method" value="PUT">
 <h3>Update Cargo Type:</h3>
 <!-- //update description -->
@@ -43,6 +46,6 @@
 
 
 <!-- //submit that attaches to user id -->
-    <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>">
+    <!-- <input type="hidden" name="[update]user_id" value="<%= @current_user.id %>"> -->
     <input type="submit" name="" value="submit">
 </form>

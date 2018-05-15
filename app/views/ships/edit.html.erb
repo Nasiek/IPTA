@@ -1,9 +1,16 @@
+<style type="text/css">
+    .container{
+        position: absolute;
+        top: 100px;
+    }
+</style>
+<div class="container">
 <h1>Update your Spaceship's Information</h1>
 
 <!--
 //form to edit a ship from "ship profile" page
 //picks the ship from ship.id -->
-<form class="" action="/ships/<%=@ship.id%>" method="POST">
+<form class="" enctype="multipart/form-data" action="/ships/<%=@ship.id%>" method="POST">
     <input type="hidden" name="_method" value="PUT">
 
 <!-- //change vehicle name -->
@@ -27,20 +34,21 @@
     <input type="file" name="[update]avatar" id="ship_avatar">
   <p>Your Ship: </p>
 
-  <% if @ship.avatar.url == nil%>
-    <%= image_tag "/images/elon.jpg" %>
+
+<% if @ship.avatar.url == nil%>
+    <%= image_tag "elon.jpg" %>
     <% else %>
     <%= image_tag @ship.avatar.url %>
 <% end %>
+  
 
 <!-- //subit button that attaches it to current user id -->
     
     <input type="submit" name="" value="submit">
+
 </form>
+<%= button_to "Delete", ship_path(@ship), method: :delete %>
 
 <!-- //delete ship -->
-<div id="delete_button">
-    <form class="" action="/ships/<%= @ship.id%>" method="DELETE">
-       <input type="submit" name="<%= @ship.id%>" value="Delete this ship">
-    </form>
+
 </div>

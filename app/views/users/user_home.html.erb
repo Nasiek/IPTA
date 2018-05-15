@@ -7,12 +7,15 @@
 
 </head>
 <body onload="init()">
+	<br>
+	<br>
+	<br>
+	<br>
 	<canvas id="background" width="1325" height="650"></canvas>
-	<h1>Welcome, <%= current_user.fname %></h1>
-	 <h2><%= current_user.fname %>'s Profile</h2>
-
 	<img id="background_pic" src="/assets/background.jpg" style= "width:1000px; height:550px;">
-	<div id="overlay_div"></div>
+	<div id="overlay_div">
+		<h1 style="color:white;">Welcome, <%= current_user.fname %></h1>
+	 <h2 style="color:white;"><%= current_user.fname %>'s Profile</h2></div>
 
 	<img id="hologram_pic" src="/assets/projector.png" style= "width:125px; height:250px;">
 
@@ -30,13 +33,13 @@
 		<button id="viewShip_button" onclick="hologram.viewShip()">View Ship</button>
 		<button id="newTrip_button" onclick="hologram.newTrip()">New Trip</button>
 		<button id="viewTrip_button" onclick="hologram.viewTrip()">View Trip</button>
-		<button id="edit_button">Edit Profile</button>
+		<button id="edit_button"><%= link_to 'Edit Profile', edit_user_registration_path %></button>
 		<button id="logout_button"><%= link_to 'Log Out', destroy_user_session_path, method: :delete,class: 'logout'%></button>
 	</div>
 
 	<img id="newShip_pic" src="/assets/newShip.jpg" style= "width:300px; height:250px;">
 	<div id="newShip_div">
-		<form class="" action="/ships" method="POST">
+		<form class="" action="/ships" enctype="multipart/form-data" method="POST">
 			<h3 id="newShip_h3">Create New Ship</h3>
 			<p id="shipName_p">Name:</p>
 		  <input id="shipName" type="text" name="[create]veh_name">
@@ -55,7 +58,7 @@
 		    <option value="12">12</option>
 		  </select>
 			<p id="upload_p">Upload Ship Image</p>
-			<input id="upload_button" type="file" name="user[avatar]" id="user_avatar">
+			<input id="upload_button" type="file" name="[create]avatar" id="user_avatar">
 		  <input id="shipsSumbit_button" type="submit" name="" value="submit">
 		</form>
 	</div>
@@ -122,7 +125,7 @@
 	<div id="viewTrips_div">
 		<h2 id="viewTrips_h2">Your Trips</h2>
 		<% current_user.trips.each do |trip|%>
-	  	<h4 id="viewType_h4">Type: <%= link_to trip.description, trips_path(trip) %></h4>
+	  	<h4 id="viewType_h4">Type: <%= link_to trip.description, trip_path(trip) %></h4>
 	  	<h4 id="viewCost_h4">Cost: <%= trip.cost%></h4>
 	    <h4 id="viewSeats2_h4">Seats: <%= trip.seats%></h4>
 		<% end %>

@@ -24,7 +24,8 @@ end
 
 def update
 @trip = Trip.find(params[:id])
-@tripupdate = @trip.update(update_params)
+@trip.update(update_params)
+@trip.save
 
 redirect_to trip_path(@trip)
 end

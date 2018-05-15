@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 	include TripsHelper
 	include ShipsHelper
+require 'carrierwave/orm/activerecord'
 
 
 	def sign_up_params
