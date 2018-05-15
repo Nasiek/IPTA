@@ -15,7 +15,6 @@
 
 <p>Your Ship: </p> 
 
-<%= @ship.avatar.url%>
 <% if @ship.avatar.url == nil%>
 	<%= image_tag "/images/elon.jpg" %>
 	<% else %>
@@ -43,7 +42,7 @@
 	<p>Trip Users: <%= shiptrip.user.fname %> </p>
  <% end %>
  <% else %>
- <p>You have no trips. Want to add a trip?</p>
+ <p>You cannot currently add a ship to a trip at this moment. Would you like to add a <%= link_to 'trip to a ship',users_home_path %>?</p>
  <% end %>
 
 
