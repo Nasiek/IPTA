@@ -9,7 +9,9 @@
 <body>
 
 <h4>At <%= link_to "IPTA", users_home_path %>, we value transparency. Have a look at the details of this journey.</h4>
-
+<br>
+<br>
+<br>
     <h2>View the Trip Information </h2>
     <p>Trip Cargo Type:
         <%= @trip.description %>
@@ -40,9 +42,10 @@
         <%= @trip.updated_at.strftime("%B %d, %Y") %>
     </p>
     <div id="delete_button">
-        <form action="/trips/<%= @trip.id%>" method="DELETE">
+      <%= button_to "Delete", trip_path(@trip), method: :delete %>
+        <!--<form action="/trips/<%= @trip.id%>" method="DELETE">
             <input type="submit" name="" value="Terminate this Trip">
-        </form>
+        </form>-->
     </div>
     <h2>Current Trip Vehicle Info</h2>
     <% if @trip.ships && @trip.ships.length > 0 %>
@@ -63,7 +66,7 @@
                 <% end %>
             </p>
 
-            <p>Ship Owner: 
+            <p>Ship Owner:
                 <%= tripship.user.fname %> <%= tripship.user.lname %>
             </p>
             <p>Contact owner for more info: <%= tripship.user.email %></p>

@@ -51,10 +51,12 @@ end
 
   end
 
-  def delete
+  def destroy
     @trip_delete = Trip.find(params[:id])
     @trip_delete.destroy
-    redirect_to "/users/home"
+    if @trip_delete.destroy
+      redirect_to "/users/home"
+    end
   end
 
 private
