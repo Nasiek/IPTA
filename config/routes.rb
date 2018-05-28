@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   get 'ships/edit'
   get 'trips/edit'
   get 'welcome/index'
+
+  get '/destination', to: 'welcome#destinations'
+  get '/requirments', to: 'welcome#requirments'
+  get '/earnings', to: 'welcome#earnings'
+  get '/jobs', to: 'welcome#jobs'
+
   get 'users/home', to: 'users#user_home'
 
   get 'ships/feed', to: 'ships#index'
