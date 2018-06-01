@@ -382,7 +382,29 @@ canvas
   position: absolute;
   background-color: #413175;
   width: 1325px;
+  height: 375px;
   top: 500px;
+}
+#picsOne_div
+{
+  position: absolute;
+  top: 150px;
+  width: 50px;
+  left: 640px;
+}
+#picsTwo_div
+{
+  position: absolute;
+  top: 150px;
+  width: 50px;
+  left: 991px;
+}
+#pf_div
+{
+  position: absolute;
+  width: 275px;
+  top: 125px;
+  left: 25px;
 }
 #provide_div
 {
@@ -408,6 +430,20 @@ canvas
   background-color: #887bb3;
   position: absolute;
   height: 500px;
+}
+#rowOne_div
+{
+  position: absolute;
+  top: 125px;
+  left: 700px;
+  width: 250px;
+}
+#rowTwo_div
+{
+  position: absolute;
+  left: 1050px;
+  top: 125px;
+  width: 250px;
 }
 #screen_div
 {
@@ -487,6 +523,13 @@ canvas
   text-align: center;
   font-size: 40px;
 }
+#moral_h1
+{
+  position: absolute;
+  top: 25px;
+  left: 650px;
+  margin: auto;
+}
 #name_h1
 {
   font-family: 'Cinzel Decorative', cursive;
@@ -560,6 +603,13 @@ canvas
   top: 225px;
   left: 1020px;
   position: absolute;
+}
+#physical_h1
+{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  margin: auto;
 }
 #question_h2
 {
@@ -938,8 +988,8 @@ canvas
 /*Start Images*/
 #a_pic
 {
-  top: 15px;
-  left: 160px;
+  top: 27.5px;
+  left: 190px;
   position: absolute;
 }
 #background_pic

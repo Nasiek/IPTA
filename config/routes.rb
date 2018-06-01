@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get 'trips/personal/:id', to: 'trips#show', as: 'trip_personal'
   post 'ship_trips', to: 'contracts#create'
   delete 'ship_trips/:id', to: 'contracts#destroy'
-resources :trips, except: [:index]
-resources :ships, except: [:index]
+  resources :trips, except: [:index]
+  resources :ships, except: [:index]
 
 
   root "welcome#index"
